@@ -3,7 +3,12 @@ using UnityEngine;
 public class ReadableObject : MonoBehaviour
 {
     [TextArea(3, 10)]
-    [SerializeField] private string content = "This is placeholder text.";
+    [SerializeField] private string content = "placeholder text";
+
+    [Header("Story Progress")]
+    [SerializeField] private int storyBeatAfterReading = -1;
+    [SerializeField] private int minimumStoryBeatToAdvance;
+    [SerializeField] private bool onlyAdvanceStory = true;
 
     private static TextPanel textPanel;
 
@@ -23,7 +28,37 @@ public class ReadableObject : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No TextPanel found in scene.");
+            Debug.LogWarning("no panel found in scene");
+        }
+
+        AdvanceStoryIfNeeded();
+    }
+
+    private void AdvanceStoryIfNeeded()
+    {
+        if (storyBeatAfterReading < 0)
+        {
+            return;
+        }
+
+        if (StoryProgress.Instance == null)
+        {
+            Debug.LogWarning("no progress found in scene.");
+            return;
+        }
+
+        if (StoryProgress.Instance.CurrentStoryBeat < minimumStoryBeatToAdvance)
+        {
+            return;
+        }
+
+        if (onlyAdvanceStory)
+        {
+            StoryProgress.Instance.AdvanceToStoryBeat(storyBeatAfterReading);
+        }
+        else
+        {
+            StoryProgress.Instance.SetStoryBeat(storyBeatAfterReading);
         }
     }
 }

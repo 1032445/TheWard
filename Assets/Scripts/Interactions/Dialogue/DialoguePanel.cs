@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialoguePanel : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialoguePanel : MonoBehaviour
 
     private DialogueLine[] currentLines;
     private int currentIndex;
+    private Action onDialogueComplete;
 
     private void Awake()
     {
@@ -20,12 +22,13 @@ public class DialoguePanel : MonoBehaviour
         }
     }
 
-    public void StartDialogue(DialogueLine[] lines)
+    public void StartDialogue(DialogueLine[] lines, Action onComplete = null)
     {
         if (lines == null || lines.Length == 0) return;
 
         currentLines = lines;
         currentIndex = 0;
+        onDialogueComplete = onComplete;
         panelRoot.SetActive(true);
         IsAnyDialogueOpen = true;
         ShowCurrentLine();
@@ -50,6 +53,9 @@ public class DialoguePanel : MonoBehaviour
         panelRoot.SetActive(false);
         IsAnyDialogueOpen = false;
         currentLines = null;
+        Action completed = onDialogueComplete;
+        onDialogueComplete = null;
+        completed?.Invoke();
     }
 
     private void ShowCurrentLine()

@@ -36,7 +36,15 @@ public class PlayerInteractor : MonoBehaviour
 
         if (currentNpc != null)
         {
-            currentNpc.Interact();
+            if (currentNpc.CanInteract)
+            {
+                currentNpc.Interact();
+            }
+            else
+            {
+                currentNpc = null;
+                SetPromptVisible(false);
+            }
         }
         else if (currentReadable != null)
         {
@@ -49,8 +57,11 @@ public class PlayerInteractor : MonoBehaviour
         NpcDialogue npc = other.GetComponent<NpcDialogue>();
         if (npc != null)
         {
-            currentNpc = npc;
-            SetPromptVisible(true);
+            if (npc.CanInteract)
+            {
+                currentNpc = npc;
+                SetPromptVisible(true);
+            }
             return;
         }
 
