@@ -8,6 +8,8 @@ public class PlayerInteractor : MonoBehaviour
 
     private ReadableObject currentReadable;
     private NpcDialogue currentNpc;
+    private PatrolTaskObject currentPatrolTaskObject;
+    private PatrolBoard currentPatrolBoard;
 
     private TextPanel textPanel;
     private DialoguePanel dialoguePanel;
@@ -50,6 +52,14 @@ public class PlayerInteractor : MonoBehaviour
         {
             currentReadable.Interact();
         }
+        else if (currentPatrolTaskObject != null)
+        {
+            currentPatrolTaskObject.Interact();
+        }
+        else if (currentPatrolBoard != null)
+        {
+            currentPatrolBoard.Interact();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,6 +80,22 @@ public class PlayerInteractor : MonoBehaviour
         {
             currentReadable = readable;
             SetPromptVisible(true);
+            return;
+        }
+
+        PatrolTaskObject patrolTaskObject = other.GetComponent<PatrolTaskObject>();
+        if (patrolTaskObject != null)
+        {
+            currentPatrolTaskObject = patrolTaskObject;
+            SetPromptVisible(true);
+            return;
+        }
+
+        PatrolBoard patrolBoard = other.GetComponent<PatrolBoard>();
+        if (patrolBoard != null)
+        {
+            currentPatrolBoard = patrolBoard;
+            SetPromptVisible(true);
         }
     }
 
@@ -87,6 +113,22 @@ public class PlayerInteractor : MonoBehaviour
         if (readable != null && readable == currentReadable)
         {
             currentReadable = null;
+            SetPromptVisible(false);
+            return;
+        }
+
+        PatrolTaskObject patrolTaskObject = other.GetComponent<PatrolTaskObject>();
+        if (patrolTaskObject != null && patrolTaskObject == currentPatrolTaskObject)
+        {
+            currentPatrolTaskObject = null;
+            SetPromptVisible(false);
+            return;
+        }
+
+        PatrolBoard patrolBoard = other.GetComponent<PatrolBoard>();
+        if (patrolBoard != null && patrolBoard == currentPatrolBoard)
+        {
+            currentPatrolBoard = null;
             SetPromptVisible(false);
         }
     }
