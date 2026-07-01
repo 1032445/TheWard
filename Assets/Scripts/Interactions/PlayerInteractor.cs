@@ -30,6 +30,12 @@ public class PlayerInteractor : MonoBehaviour
             return;
         }
 
+        if (PersonnelFilePanel.IsAnyPersonnelFileOpen)
+        {
+            PersonnelFilePanel.HideOpenPanel();
+            return;
+        }
+
         if (textPanel != null && textPanel.IsOpen)
         {
             textPanel.Hide();

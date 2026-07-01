@@ -5,6 +5,10 @@ public class ReadableObject : MonoBehaviour
     [TextArea(3, 10)]
     [SerializeField] private string content = "placeholder text";
 
+    [Header("Personnel File")]
+    [SerializeField] private PersonnelFilePanel personnelFilePanel;
+    [SerializeField] private PersonnelFileRecord personnelFileRecord;
+
     [Header("Story Progress")]
     [SerializeField] private int storyBeatAfterReading = -1;
     [SerializeField] private int minimumStoryBeatToAdvance;
@@ -22,7 +26,11 @@ public class ReadableObject : MonoBehaviour
 
     public void Interact()
     {
-        if (textPanel != null)
+        if (personnelFilePanel != null)
+        {
+            personnelFilePanel.Show(personnelFileRecord);
+        }
+        else if (textPanel != null)
         {
             textPanel.Show(content);
         }
