@@ -61,7 +61,7 @@ public class RadioMessageTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(delaySeconds);
 
-        while (TextPanel.IsAnyPanelOpen || DialoguePanel.IsAnyDialogueOpen)
+        while (TextPanel.IsAnyPanelOpen || DialoguePanel.IsAnyDialogueOpen || EndingChoicePanel.IsAnyEndingChoiceOpen)
         {
             yield return null;
         }

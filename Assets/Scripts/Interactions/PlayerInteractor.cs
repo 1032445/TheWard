@@ -12,6 +12,7 @@ public class PlayerInteractor : MonoBehaviour
     private PatrolBoard currentPatrolBoard;
     private KitchenDoorInteraction currentKitchenDoor;
     private LogbookObject currentLogbook;
+    private EndingChoiceObject currentEndingChoice;
 
     private TextPanel textPanel;
     private DialoguePanel dialoguePanel;
@@ -24,6 +25,11 @@ public class PlayerInteractor : MonoBehaviour
 
     private void Update()
     {
+        if (EndingChoicePanel.IsAnyEndingChoiceOpen)
+        {
+            return;
+        }
+
         if (!Keyboard.current[interactKey].wasPressedThisFrame) return;
 
         if (dialoguePanel != null && dialoguePanel.IsOpen)
@@ -98,6 +104,18 @@ public class PlayerInteractor : MonoBehaviour
                 SetPromptVisible(false);
             }
         }
+        else if (currentEndingChoice != null)
+        {
+            if (currentEndingChoice.CanInteract)
+            {
+                currentEndingChoice.Interact();
+            }
+            else
+            {
+                currentEndingChoice = null;
+                SetPromptVisible(false);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -156,6 +174,17 @@ public class PlayerInteractor : MonoBehaviour
                 currentLogbook = logbook;
                 SetPromptVisible(true);
             }
+            return;
+        }
+
+        EndingChoiceObject endingChoice = other.GetComponent<EndingChoiceObject>();
+        if (endingChoice != null)
+        {
+            if (endingChoice.CanInteract)
+            {
+                currentEndingChoice = endingChoice;
+                SetPromptVisible(true);
+            }
         }
     }
 
@@ -178,6 +207,17 @@ public class PlayerInteractor : MonoBehaviour
             if (logbook != null && logbook.CanInteract)
             {
                 currentLogbook = logbook;
+                SetPromptVisible(true);
+                return;
+            }
+        }
+
+        if (currentEndingChoice == null)
+        {
+            EndingChoiceObject endingChoice = other.GetComponent<EndingChoiceObject>();
+            if (endingChoice != null && endingChoice.CanInteract)
+            {
+                currentEndingChoice = endingChoice;
                 SetPromptVisible(true);
             }
         }
@@ -229,6 +269,14 @@ public class PlayerInteractor : MonoBehaviour
         if (logbook != null && logbook == currentLogbook)
         {
             currentLogbook = null;
+            SetPromptVisible(false);
+            return;
+        }
+
+        EndingChoiceObject endingChoice = other.GetComponent<EndingChoiceObject>();
+        if (endingChoice != null && endingChoice == currentEndingChoice)
+        {
+            currentEndingChoice = null;
             SetPromptVisible(false);
         }
     }
