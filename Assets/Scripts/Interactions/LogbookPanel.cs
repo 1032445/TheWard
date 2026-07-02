@@ -14,10 +14,11 @@ public class LogbookPanel : MonoBehaviour
     private static LogbookPanel openPanel;
     private LogbookPage[] pages;
     private int currentPageIndex;
+    private bool isBeingShown;
 
     private void Awake()
     {
-        if (panelRoot != null)
+        if (panelRoot != null && !isBeingShown)
         {
             panelRoot.SetActive(false);
         }
@@ -58,7 +59,9 @@ public class LogbookPanel : MonoBehaviour
 
         if (panelRoot != null)
         {
+            isBeingShown = true;
             panelRoot.SetActive(true);
+            isBeingShown = false;
         }
 
         openPanel = this;

@@ -10,10 +10,11 @@ public class PersonnelFilePanel : MonoBehaviour
 
     public static bool IsAnyPersonnelFileOpen { get; private set; }
     private static PersonnelFilePanel openPanel;
+    private bool isBeingShown;
 
     private void Awake()
     {
-        if (panelRoot != null)
+        if (panelRoot != null && !isBeingShown)
         {
             panelRoot.SetActive(false);
         }
@@ -38,7 +39,9 @@ public class PersonnelFilePanel : MonoBehaviour
 
         if (panelRoot != null)
         {
+            isBeingShown = true;
             panelRoot.SetActive(true);
+            isBeingShown = false;
         }
 
         openPanel = this;

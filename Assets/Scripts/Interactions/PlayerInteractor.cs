@@ -64,7 +64,15 @@ public class PlayerInteractor : MonoBehaviour
         }
         else if (currentReadable != null)
         {
-            currentReadable.Interact();
+            if (currentReadable.CanInteract)
+            {
+                currentReadable.Interact();
+            }
+            else
+            {
+                currentReadable = null;
+                SetPromptVisible(false);
+            }
         }
         else if (currentPatrolTaskObject != null)
         {
@@ -80,7 +88,15 @@ public class PlayerInteractor : MonoBehaviour
         }
         else if (currentLogbook != null)
         {
-            currentLogbook.Interact();
+            if (currentLogbook.CanInteract)
+            {
+                currentLogbook.Interact();
+            }
+            else
+            {
+                currentLogbook = null;
+                SetPromptVisible(false);
+            }
         }
     }
 
@@ -100,8 +116,11 @@ public class PlayerInteractor : MonoBehaviour
         ReadableObject readable = other.GetComponent<ReadableObject>();
         if (readable != null)
         {
-            currentReadable = readable;
-            SetPromptVisible(true);
+            if (readable.CanInteract)
+            {
+                currentReadable = readable;
+                SetPromptVisible(true);
+            }
             return;
         }
 
@@ -132,8 +151,35 @@ public class PlayerInteractor : MonoBehaviour
         LogbookObject logbook = other.GetComponent<LogbookObject>();
         if (logbook != null)
         {
-            currentLogbook = logbook;
-            SetPromptVisible(true);
+            if (logbook.CanInteract)
+            {
+                currentLogbook = logbook;
+                SetPromptVisible(true);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (currentReadable == null)
+        {
+            ReadableObject readable = other.GetComponent<ReadableObject>();
+            if (readable != null && readable.CanInteract)
+            {
+                currentReadable = readable;
+                SetPromptVisible(true);
+                return;
+            }
+        }
+
+        if (currentLogbook == null)
+        {
+            LogbookObject logbook = other.GetComponent<LogbookObject>();
+            if (logbook != null && logbook.CanInteract)
+            {
+                currentLogbook = logbook;
+                SetPromptVisible(true);
+            }
         }
     }
 

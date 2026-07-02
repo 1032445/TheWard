@@ -10,6 +10,7 @@ public class ReadableObject : MonoBehaviour
     [SerializeField] private PersonnelFileRecord personnelFileRecord;
 
     [Header("Story Progress")]
+    [SerializeField] private int minimumStoryBeatToInteract;
     [SerializeField] private int storyBeatAfterReading = -1;
     [SerializeField] private int minimumStoryBeatToAdvance;
     [SerializeField] private bool onlyAdvanceStory = true;
@@ -26,8 +27,27 @@ public class ReadableObject : MonoBehaviour
         }
     }
 
+    public bool CanInteract
+    {
+        get
+        {
+            if (minimumStoryBeatToInteract <= 0)
+            {
+                return true;
+            }
+
+            return StoryProgress.Instance != null
+                && StoryProgress.Instance.CurrentStoryBeat >= minimumStoryBeatToInteract;
+        }
+    }
+
     public void Interact()
     {
+        if (!CanInteract)
+        {
+            return;
+        }
+
         if (personnelFilePanel != null)
         {
             personnelFilePanel.Show(personnelFileRecord);

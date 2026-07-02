@@ -517,7 +517,7 @@ MonoBehaviour:
     isInteractable: 1
     lines: []
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 3
     location: {fileID: 2137161114}
     isVisible: 0
     isInteractable: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
       text: Now, go on. We've already spent far too long yapping about. We've got
         sceince to do.
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 4
     location: {fileID: 1156857748}
     isVisible: 1
     isInteractable: 1
@@ -912,8 +912,9 @@ MonoBehaviour:
     notes: 'Long-term exposure records confirm seven-year continuity in subjects,
       despite repeated induction resets. Subjects continue to identify current assignment
       as first shift when dosage is accurately maintained.  '
-  storyBeatAfterFirstOpen: 10
-  minimumStoryBeatToAdvance: 5
+  minimumStoryBeatToInteract: 3
+  storyBeatAfterFirstOpen: 4
+  minimumStoryBeatToAdvance: 3
   onlyAdvanceStory: 1
 --- !u!212 &249883115
 SpriteRenderer:
@@ -1066,8 +1067,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2065954675}
-  - {fileID: 1387821483}
-  - {fileID: 1296442863}
   m_Father: {fileID: 34476765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274857604
@@ -1264,6 +1263,7 @@ MonoBehaviour:
     clearanceLevel: 
     status: 
     notes: 
+  minimumStoryBeatToInteract: 0
   storyBeatAfterReading: -1
   minimumStoryBeatToAdvance: 0
   onlyAdvanceStory: 1
@@ -1385,8 +1385,9 @@ MonoBehaviour:
     clearanceLevel: Level 2
     status: 
     notes: 
-  storyBeatAfterReading: 5
-  minimumStoryBeatToAdvance: 0
+  minimumStoryBeatToInteract: 2
+  storyBeatAfterReading: 3
+  minimumStoryBeatToAdvance: 2
   onlyAdvanceStory: 1
   advanceStoryOnlyOnce: 1
 --- !u!212 &280482687
@@ -2359,6 +2360,7 @@ MonoBehaviour:
     clearanceLevel: 
     status: 
     notes: 
+  minimumStoryBeatToInteract: 0
   storyBeatAfterReading: -1
   minimumStoryBeatToAdvance: 0
   onlyAdvanceStory: 1
@@ -2575,7 +2577,7 @@ MonoBehaviour:
     isInteractable: 1
     lines: []
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 3
     location: {fileID: 1973348096}
     isVisible: 0
     isInteractable: 0
@@ -3162,7 +3164,7 @@ MonoBehaviour:
     isInteractable: 1
     lines: []
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 3
     location: {fileID: 2080623145}
     isVisible: 0
     isInteractable: 0
@@ -3715,7 +3717,7 @@ MonoBehaviour:
   - Inspect power panel
   - Check kitchen door locks
   currentTaskNumber: 1
-  storyBeatAfterTask: 2
+  storyBeatAfterTask: 1
   taskNumberThatChangesStory: 3
 --- !u!4 &757300978
 Transform:
@@ -3744,8 +3746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1870f2ec48846b2af16b5374df5e594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioMessageTrigger
-  storyBeatToPlay: 2
-  delaySeconds: 5
+  storyBeatToPlay: 1
+  delaySeconds: 3
   playOnce: 1
   messageLines:
   - speaker: 'Radio '
@@ -7705,6 +7707,7 @@ MonoBehaviour:
     clearanceLevel: 
     status: 
     notes: 
+  minimumStoryBeatToInteract: 0
   storyBeatAfterReading: -1
   minimumStoryBeatToAdvance: 0
   onlyAdvanceStory: 1
@@ -8108,7 +8111,7 @@ MonoBehaviour:
     isInteractable: 1
     lines: []
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 3
     location: {fileID: 1183980820}
     isVisible: 0
     isInteractable: 0
@@ -8662,7 +8665,7 @@ Transform:
   m_GameObject: {fileID: 1156857747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.21, y: 4.18, z: 0}
+  m_LocalPosition: {x: 1.43, y: 6.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9108,6 +9111,7 @@ MonoBehaviour:
     clearanceLevel: 
     status: 
     notes: 
+  minimumStoryBeatToInteract: 0
   storyBeatAfterReading: -1
   minimumStoryBeatToAdvance: 0
   onlyAdvanceStory: 1
@@ -9187,149 +9191,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1296442862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1296442863}
-  - component: {fileID: 1296442866}
-  - component: {fileID: 1296442865}
-  - component: {fileID: 1296442864}
-  m_Layer: 0
-  m_Name: Service (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1296442863
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296442862}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8379302, y: 1.5783606, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 259901944}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1296442864
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296442862}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.7
---- !u!114 &1296442865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296442862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
-  storyStates: []
---- !u!212 &1296442866
-SpriteRenderer:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296442862}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
-  m_BlendShapeWeights: []
 --- !u!1 &1305882062
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,149 +9481,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1146939315}
   m_SourcePrefab: {fileID: 100100000, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
---- !u!1 &1387821482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1387821483}
-  - component: {fileID: 1387821486}
-  - component: {fileID: 1387821485}
-  - component: {fileID: 1387821484}
-  m_Layer: 0
-  m_Name: Service (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1387821483
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387821482}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.55793, y: -0.021639824, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 259901944}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1387821484
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387821482}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.7
---- !u!114 &1387821485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387821482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
-  storyStates: []
---- !u!212 &1387821486
-SpriteRenderer:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387821482}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
-  m_BlendShapeWeights: []
 --- !u!1 &1416988808
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,7 +10066,7 @@ MonoBehaviour:
     text: 'You don''t say. Anyway, kitchen staff only, thanks. '
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyCheckedMessage: The kitchen doors are already checked.
-  storyBeatRequiredToOpen: 5
+  storyBeatRequiredToOpen: 3
   doorObjectToDisable: {fileID: 1545320863}
   openedMessage: The kitchen doors open.
   showOpenedMessage: 1
@@ -22697,7 +22415,8 @@ MonoBehaviour:
     clearanceLevel: 
     status: 
     notes: 
-  storyBeatAfterReading: -1
+  minimumStoryBeatToInteract: 1
+  storyBeatAfterReading: 2
   minimumStoryBeatToAdvance: 0
   onlyAdvanceStory: 1
   advanceStoryOnlyOnce: 1
@@ -22964,6 +22683,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1678557911}
   m_SourcePrefab: {fileID: 100100000, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
+--- !u!1 &1882511323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882511324}
+  m_Layer: 0
+  m_Name: First Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882511324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882511323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2065954675}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1906519222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23385,6 +23135,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &2055638253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055638254}
+  m_Layer: 0
+  m_Name: Off Screen Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055638254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055638253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 66.2, y: 23.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2065954675}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065954674
 GameObject:
   m_ObjectHideFlags: 0
@@ -23416,7 +23197,9 @@ Transform:
   m_LocalPosition: {x: -8.40793, y: 1.2083597, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1882511324}
+  - {fileID: 2055638254}
   m_Father: {fileID: 259901944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2065954676
@@ -23467,7 +23250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
-  storyStates: []
+  storyStates:
+  - minimumStoryBeat: 0
+    location: {fileID: 1882511324}
+    isVisible: 1
+    isInteractable: 0
+    lines: []
+    storyBeatAfterDialogue: 0
+  - minimumStoryBeat: 3
+    location: {fileID: 2055638254}
+    isVisible: 0
+    isInteractable: 0
+    lines: []
+    storyBeatAfterDialogue: 0
 --- !u!212 &2065954678
 SpriteRenderer:
   serializedVersion: 3
@@ -23695,7 +23490,7 @@ MonoBehaviour:
     isInteractable: 1
     lines: []
     storyBeatAfterDialogue: 0
-  - minimumStoryBeat: 10
+  - minimumStoryBeat: 3
     location: {fileID: 832199455}
     isVisible: 0
     isInteractable: 0

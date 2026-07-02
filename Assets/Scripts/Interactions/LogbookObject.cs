@@ -6,14 +6,34 @@ public class LogbookObject : MonoBehaviour
     [SerializeField] private LogbookPage[] pages;
 
     [Header("Story Progress")]
+    [SerializeField] private int minimumStoryBeatToInteract;
     [SerializeField] private int storyBeatAfterFirstOpen = -1;
     [SerializeField] private int minimumStoryBeatToAdvance;
     [SerializeField] private bool onlyAdvanceStory = true;
 
     private bool hasAdvancedStory;
 
+    public bool CanInteract
+    {
+        get
+        {
+            if (minimumStoryBeatToInteract <= 0)
+            {
+                return true;
+            }
+
+            return StoryProgress.Instance != null
+                && StoryProgress.Instance.CurrentStoryBeat >= minimumStoryBeatToInteract;
+        }
+    }
+
     public void Interact()
     {
+        if (!CanInteract)
+        {
+            return;
+        }
+
         if (logbookPanel != null)
         {
             logbookPanel.Show(pages);
