@@ -13,8 +13,10 @@ public class ReadableObject : MonoBehaviour
     [SerializeField] private int storyBeatAfterReading = -1;
     [SerializeField] private int minimumStoryBeatToAdvance;
     [SerializeField] private bool onlyAdvanceStory = true;
+    [SerializeField] private bool advanceStoryOnlyOnce = true;
 
     private static TextPanel textPanel;
+    private bool hasAdvancedStory;
 
     private void Start()
     {
@@ -49,6 +51,11 @@ public class ReadableObject : MonoBehaviour
             return;
         }
 
+        if (advanceStoryOnlyOnce && hasAdvancedStory)
+        {
+            return;
+        }
+
         if (StoryProgress.Instance == null)
         {
             Debug.LogWarning("no progress found in scene.");
@@ -68,5 +75,7 @@ public class ReadableObject : MonoBehaviour
         {
             StoryProgress.Instance.SetStoryBeat(storyBeatAfterReading);
         }
+
+        hasAdvancedStory = true;
     }
 }

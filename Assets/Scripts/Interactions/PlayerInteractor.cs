@@ -10,6 +10,8 @@ public class PlayerInteractor : MonoBehaviour
     private NpcDialogue currentNpc;
     private PatrolTaskObject currentPatrolTaskObject;
     private PatrolBoard currentPatrolBoard;
+    private KitchenDoorInteraction currentKitchenDoor;
+    private LogbookObject currentLogbook;
 
     private TextPanel textPanel;
     private DialoguePanel dialoguePanel;
@@ -33,6 +35,12 @@ public class PlayerInteractor : MonoBehaviour
         if (PersonnelFilePanel.IsAnyPersonnelFileOpen)
         {
             PersonnelFilePanel.HideOpenPanel();
+            return;
+        }
+
+        if (LogbookPanel.IsAnyLogbookOpen)
+        {
+            LogbookPanel.HideOpenPanel();
             return;
         }
 
@@ -65,6 +73,14 @@ public class PlayerInteractor : MonoBehaviour
         else if (currentPatrolBoard != null)
         {
             currentPatrolBoard.Interact();
+        }
+        else if (currentKitchenDoor != null)
+        {
+            currentKitchenDoor.Interact();
+        }
+        else if (currentLogbook != null)
+        {
+            currentLogbook.Interact();
         }
     }
 
@@ -102,6 +118,22 @@ public class PlayerInteractor : MonoBehaviour
         {
             currentPatrolBoard = patrolBoard;
             SetPromptVisible(true);
+            return;
+        }
+
+        KitchenDoorInteraction kitchenDoor = other.GetComponent<KitchenDoorInteraction>();
+        if (kitchenDoor != null)
+        {
+            currentKitchenDoor = kitchenDoor;
+            SetPromptVisible(true);
+            return;
+        }
+
+        LogbookObject logbook = other.GetComponent<LogbookObject>();
+        if (logbook != null)
+        {
+            currentLogbook = logbook;
+            SetPromptVisible(true);
         }
     }
 
@@ -135,6 +167,22 @@ public class PlayerInteractor : MonoBehaviour
         if (patrolBoard != null && patrolBoard == currentPatrolBoard)
         {
             currentPatrolBoard = null;
+            SetPromptVisible(false);
+            return;
+        }
+
+        KitchenDoorInteraction kitchenDoor = other.GetComponent<KitchenDoorInteraction>();
+        if (kitchenDoor != null && kitchenDoor == currentKitchenDoor)
+        {
+            currentKitchenDoor = null;
+            SetPromptVisible(false);
+            return;
+        }
+
+        LogbookObject logbook = other.GetComponent<LogbookObject>();
+        if (logbook != null && logbook == currentLogbook)
+        {
+            currentLogbook = null;
             SetPromptVisible(false);
         }
     }

@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (TextPanel.IsAnyPanelOpen || DialoguePanel.IsAnyDialogueOpen || PersonnelFilePanel.IsAnyPersonnelFileOpen)
+        if (TextPanel.IsAnyPanelOpen || DialoguePanel.IsAnyDialogueOpen || PersonnelFilePanel.IsAnyPersonnelFileOpen || LogbookPanel.IsAnyLogbookOpen)
         {
             moveInput = Vector2.zero;
             return;
