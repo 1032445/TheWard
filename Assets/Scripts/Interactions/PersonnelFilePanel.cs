@@ -12,6 +12,13 @@ public class PersonnelFilePanel : MonoBehaviour
     private static PersonnelFilePanel openPanel;
     private bool isBeingShown;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        openPanel = null;
+        IsAnyPersonnelFileOpen = false;
+    }
+
     private void Awake()
     {
         if (panelRoot != null && !isBeingShown)

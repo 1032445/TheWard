@@ -14,6 +14,17 @@ public class DialoguePanel : MonoBehaviour
     private int currentIndex;
     private Action onDialogueComplete;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        ResetOpenState();
+    }
+
+    public static void ResetOpenState()
+    {
+        IsAnyDialogueOpen = false;
+    }
+
     private void Awake()
     {
         if (panelRoot != null)

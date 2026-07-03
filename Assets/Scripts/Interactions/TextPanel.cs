@@ -17,6 +17,17 @@ public class TextPanel : MonoBehaviour
 
     public static bool IsAnyPanelOpen { get; private set; }
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        ResetOpenState();
+    }
+
+    public static void ResetOpenState()
+    {
+        IsAnyPanelOpen = false;
+    }
+
     public void Show(string content)
     {
         if (contentText != null)

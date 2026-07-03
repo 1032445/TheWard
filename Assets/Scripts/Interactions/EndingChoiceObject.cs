@@ -32,8 +32,18 @@ public class EndingChoiceObject : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetStatics()
     {
+        ResetChoiceState();
+    }
+
+    public static void ResetChoiceState()
+    {
         sharedChoicePanel = null;
         dialoguePanel = null;
+        anyChoiceConfirmed = false;
+    }
+
+    private void Awake()
+    {
         anyChoiceConfirmed = false;
     }
 

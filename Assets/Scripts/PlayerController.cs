@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
             || DialoguePanel.IsAnyDialogueOpen
             || PersonnelFilePanel.IsAnyPersonnelFileOpen
             || LogbookPanel.IsAnyLogbookOpen
-            || EndingChoicePanel.IsAnyEndingChoiceOpen)
+            || EndingChoicePanel.IsAnyEndingChoiceOpen
+            || EndingSequence.IsEndingSequencePlaying)
         {
             moveInput = Vector2.zero;
             return;

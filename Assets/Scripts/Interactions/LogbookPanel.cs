@@ -16,6 +16,13 @@ public class LogbookPanel : MonoBehaviour
     private int currentPageIndex;
     private bool isBeingShown;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        openPanel = null;
+        IsAnyLogbookOpen = false;
+    }
+
     private void Awake()
     {
         if (panelRoot != null && !isBeingShown)
