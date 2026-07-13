@@ -9,10 +9,14 @@ public class RadioMessageTrigger : MonoBehaviour
     [SerializeField] private DialogueLine[] messageLines;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip radioClip;
+    [SerializeField] private bool loopRadioClipDuringMessage = true;
 
     private DialoguePanel dialoguePanel;
     private bool hasPlayed;
     private Coroutine playRoutine;
+    private bool isLoopingRadioClip;
+    private AudioClip previousAudioClip;
+    private bool previousLoopSetting;
 
     private void OnEnable()
     {
@@ -22,6 +26,7 @@ public class RadioMessageTrigger : MonoBehaviour
     private void OnDisable()
     {
         StoryProgress.StoryBeatChanged -= HandleStoryBeatChanged;
+        StopLoopingRadioClip();
     }
 
     private void Start()
@@ -73,19 +78,68 @@ public class RadioMessageTrigger : MonoBehaviour
     private void PlayRadioMessage()
     {
         hasPlayed = true;
+        bool canShowDialogue = dialoguePanel != null && messageLines != null && messageLines.Length > 0;
 
-        if (audioSource != null && radioClip != null)
+        if (canShowDialogue)
         {
-            audioSource.PlayOneShot(radioClip);
-        }
-
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.StartDialogue(messageLines);
+            PlayRadioAudio(true);
+            dialoguePanel.StartDialogue(messageLines, StopLoopingRadioClip);
         }
         else
         {
-            Debug.LogWarning("no dialogue panel found in scene.");
+            PlayRadioAudio(false);
+
+            if (dialoguePanel == null)
+            {
+                Debug.LogWarning("no dialogue panel found in scene.");
+            }
+            else
+            {
+                Debug.LogWarning("radio message trigger has no dialogue lines.");
+            }
         }
+    }
+
+    private void PlayRadioAudio(bool canLoopDuringMessage)
+    {
+        if (audioSource == null || radioClip == null)
+        {
+            return;
+        }
+
+        if (!canLoopDuringMessage || !loopRadioClipDuringMessage)
+        {
+            audioSource.PlayOneShot(radioClip);
+            return;
+        }
+
+        previousAudioClip = audioSource.clip;
+        previousLoopSetting = audioSource.loop;
+        audioSource.loop = true;
+
+        if (audioSource.clip != radioClip)
+        {
+            audioSource.clip = radioClip;
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+
+        isLoopingRadioClip = true;
+    }
+
+    private void StopLoopingRadioClip()
+    {
+        if (!isLoopingRadioClip || audioSource == null)
+        {
+            return;
+        }
+
+        audioSource.Stop();
+        audioSource.clip = previousAudioClip;
+        audioSource.loop = previousLoopSetting;
+        isLoopingRadioClip = false;
     }
 }
