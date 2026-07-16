@@ -7,6 +7,7 @@ public class NpcDialogue : MonoBehaviour
     private static DialoguePanel dialoguePanel;
     private NpcStoryState currentState;
     private SpriteRenderer[] spriteRenderers;
+    private Sprite[] defaultSprites;
     private Collider2D[] colliders;
     private int appliedStoryBeat = int.MinValue;
 
@@ -26,6 +27,13 @@ public class NpcDialogue : MonoBehaviour
     private void Awake()
     {
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
+        defaultSprites = new Sprite[spriteRenderers.Length];
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            defaultSprites[i] = spriteRenderers[i].sprite;
+        }
+
         colliders = GetComponentsInChildren<Collider2D>(true);
     }
 
@@ -98,12 +106,14 @@ public class NpcDialogue : MonoBehaviour
 
         if (currentState == null)
         {
+            ApplySpriteOverride(null);
             SetVisible(true);
             SetCollidersEnabled(true);
             return;
         }
 
         currentState.ApplyLocation(transform);
+        ApplySpriteOverride(currentState.SpriteOverride);
         SetVisible(currentState.IsVisible);
         SetCollidersEnabled(currentState.IsInteractable);
     }
@@ -154,6 +164,14 @@ public class NpcDialogue : MonoBehaviour
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
         {
             spriteRenderer.enabled = visible;
+        }
+    }
+
+    private void ApplySpriteOverride(Sprite spriteOverride)
+    {
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].sprite = spriteOverride != null ? spriteOverride : defaultSprites[i];
         }
     }
 

@@ -6,12 +6,14 @@ public class NpcStoryState
 {
     [SerializeField] private int minimumStoryBeat;
     [SerializeField] private Transform location;
+    [SerializeField] private Sprite spriteOverride;
     [SerializeField] private bool isVisible = true;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private DialogueLine[] lines;
     [SerializeField] private int storyBeatAfterDialogue = -1;
 
     public int MinimumStoryBeat => minimumStoryBeat;
+    public Sprite SpriteOverride => spriteOverride;
     public bool IsVisible => isVisible;
     public bool IsInteractable => isInteractable;
     public DialogueLine[] Lines => lines;
