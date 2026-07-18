@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba91a2e42404301b6f1074a9f61cd71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuActions
-  gameplaySceneName: The Ward
+  gameplaySceneName: The Ward blockout
 --- !u!1 &152964616
 GameObject:
   m_ObjectHideFlags: 0

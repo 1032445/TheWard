@@ -10,6 +10,10 @@ public class StoryBeatDebugHotkeys : MonoBehaviour
 
     private void Update()
     {
+#if !UNITY_EDITOR
+        return;
+#endif
+
         if (!hotkeysEnabled || Keyboard.current == null || StoryProgress.Instance == null)
         {
             return;

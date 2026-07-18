@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuActions : MonoBehaviour
 {
-    [SerializeField] private string gameplaySceneName = "The Ward";
+    [SerializeField] private string gameplaySceneName = "The Ward blockout";
 
     public void StartGame()
     {

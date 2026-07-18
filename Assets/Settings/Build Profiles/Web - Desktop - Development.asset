@@ -26,6 +26,9 @@ MonoBehaviour:
     m_path: Assets/Scenes/MainMenu.unity
     m_guid: 74e312a7cb424db7ae634ac488625b89
   - m_enabled: 1
+    m_path: Assets/Scenes/The Ward blockout.unity
+    m_guid: 64958cbbd24b62d41aa1c4e1f4110c40
+  - m_enabled: 0
     m_path: Assets/Scenes/The Ward.unity
     m_guid: 8c9cfa26abfee488c85f1582747f6a02
   - m_enabled: 1
@@ -184,7 +187,9 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 1.0'
-    - line: '|   preloadedAssets: []'
+    - line: '|   preloadedAssets:'
+    - line: '|   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100,
+        type: 3}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   xboxOneDisableKinectGpuReservation: 1'
