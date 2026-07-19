@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NpcDialogue : MonoBehaviour
@@ -9,6 +10,7 @@ public class NpcDialogue : MonoBehaviour
     private SpriteRenderer[] spriteRenderers;
     private Sprite[] defaultSprites;
     private Collider2D[] colliders;
+    private readonly HashSet<NpcStoryState> completedStates = new HashSet<NpcStoryState>();
     private int appliedStoryBeat = int.MinValue;
 
     public bool CanInteract
@@ -66,7 +68,8 @@ public class NpcDialogue : MonoBehaviour
             return;
         }
 
-        DialogueLine[] activeLines = currentState != null ? currentState.Lines : null;
+        bool useRepeatLines = completedStates.Contains(currentState) && currentState.HasRepeatDialogue;
+        DialogueLine[] activeLines = useRepeatLines ? currentState.RepeatLines : currentState.Lines;
         if (activeLines == null || activeLines.Length == 0)
         {
             return;
@@ -75,7 +78,7 @@ public class NpcDialogue : MonoBehaviour
         if (dialoguePanel != null)
         {
             NpcStoryState dialogueState = currentState;
-            dialoguePanel.StartDialogue(activeLines, () => HandleDialogueComplete(dialogueState));
+            dialoguePanel.StartDialogue(activeLines, () => HandleDialogueComplete(dialogueState, useRepeatLines));
         }
         else
         {
@@ -142,8 +145,18 @@ public class NpcDialogue : MonoBehaviour
         return bestState;
     }
 
-    private void HandleDialogueComplete(NpcStoryState completedState)
+    private void HandleDialogueComplete(NpcStoryState completedState, bool wasRepeatDialogue)
     {
+        if (completedState != null)
+        {
+            completedStates.Add(completedState);
+        }
+
+        if (wasRepeatDialogue)
+        {
+            return;
+        }
+
         if (completedState == null || !completedState.AdvancesStoryAfterDialogue)
         {
             return;

@@ -1448,7 +1448,10 @@ Transform:
   - {fileID: 1479275077}
   - {fileID: 1556640521}
   - {fileID: 1591207863}
+  - {fileID: 1518248255}
   - {fileID: 2065954675}
+  - {fileID: 381591969}
+  - {fileID: 586754337}
   - {fileID: 212369659}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1584,8 +1587,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212369659}
-  - component: {fileID: 212369658}
   - component: {fileID: 212369657}
+  - component: {fileID: 212369658}
   - component: {fileID: 212369660}
   m_Layer: 0
   m_Name: Pryce
@@ -1641,6 +1644,9 @@ MonoBehaviour:
     - speaker: Pryce
       text: Now, go on. We've already spent far too long yapping about. We've got
         science to do.
+    repeatLines:
+    - speaker: Pryce
+      text: Get a move on.
     storyBeatAfterDialogue: 0
   - minimumStoryBeat: 4
     location: {fileID: 1238231649}
@@ -1649,31 +1655,39 @@ MonoBehaviour:
     isInteractable: 1
     lines:
     - speaker: Cyrus
-      text: Everyone thinks today is their first day.
+      text: Alan says he started today.
+    - speaker: Cyrus
+      text: Janet thinks she's been here for months.
+    - speaker: Cyrus
+      text: Their files say years.
+    - speaker: Cyrus
+      text: And so does mine.
     - speaker: Pryce
-      text: Not everyone.
+      text: Not everyone loses the same amount.
     - speaker: Cyrus
-      text: Don't.
+      text: Loses?
     - speaker: Pryce
-      text: Alright..
+      text: Retains, if you'd prefer.
     - speaker: Cyrus
-      text: The camera.. My file.. The logs..
+      text: I wouldn't.
     - speaker: Cyrus
-      text: 'The way people talk, then stop themselves. '
+      text: The camera. The files. The logs.
+    - speaker: Cyrus
+      text: The way people talk, then stop themselves.
     - speaker: Cyrus
       text: The way they look at me like I'm supposed to know something.
     - speaker: Pryce
-      text: 'And now you do. '
+      text: And now you do.
     - speaker: Cyrus
-      text: 'I know enough to know that something''s missing. '
+      text: I know enough to know that something's missing.
     - speaker: Pryce
-      text: That's usually where this starts.
+      text: 'That''s usually where this starts. '
     - speaker: Cyrus
       text: Usually?
     - speaker: Pryce
-      text: Sometimes it's the camera first. Sometimes the file.
+      text: 'Sometimes it''s the camera first. Sometimes the logs. '
     - speaker: Pryce
-      text: 'Today was cleaner than most. '
+      text: Today was cleaner than most.
     - speaker: Cyrus
       text: Cleaner?
     - speaker: Pryce
@@ -1685,51 +1699,80 @@ MonoBehaviour:
     - speaker: Cyrus
       text: The work..
     - speaker: Pryce
-      text: In seven years, this floor answered questions people have spent fifty
-        years circling.
+      text: 'In seven years, this floor has answered questions people have spent
+        fifty years circling. '
     - speaker: Pryce
       text: There are treatments in use now because of it.
     - speaker: Pryce
       text: 'Not theories. Not papers. Treatments. '
     - speaker: Pryce
-      text: 'People who were disappearing by inches are still present because someone
-        here kept recording what others couldn''t. '
+      text: People who were disappearing by inches are still present because someone
+        here kept recording what others couldn't.
     - speaker: Cyrus
       text: And that makes this acceptable?
     - speaker: Pryce
-      text: 'It makes it complicated. '
+      text: 'It makes it harder. '
     - speaker: Cyrus
-      text: They never agreed to this!
+      text: They never agreed to this.
     - speaker: Pryce
-      text: No..
+      text: No, they didn't.
     - speaker: Cyrus
-      text: ..Did I?
+      text: Did I?
     - speaker: Pryce
       text: Not in any way that would comfort you.
     - speaker: Cyrus
-      text: 'That''s not an answer. '
+      text: That's not an answer.
     - speaker: Pryce
-      text: 'No, but it''s the one you usually accept. '
+      text: No, but it's the one you usually accept.
     - speaker: Cyrus
-      text: Did I agree to this?!
+      text: Did I agree to this?
     - speaker: Pryce
-      text: 'Once, everyone wanted this at any cost. '
+      text: Once, you wanted the truth preserved at any cost.
     - speaker: Pryce
-      text: 'Then we learned what any cost meant. '
+      text: Then we learned what any cost meant.
     - speaker: Cyrus
       text: 'I don''t remember wanting that. '
     - speaker: Pryce
-      text: 'No. That has been the mercy, and the problem. '
+      text: 'That''s the mercy, and the problem. '
     - speaker: Cyrus
-      text: So what do you expect me to do with it now?
+      text: So what happens now?
     - speaker: Pryce
-      text: What you always do.
+      text: Usually?
+    - speaker: Cyrus
+      text: Usually.
     - speaker: Pryce
-      text: 'Decide who gets to remember. '
+      text: You ask whether I'm going to stop you.
+    - speaker: Cyrus
+      text: And are you?
     - speaker: Pryce
-      text: The radio is where it always is.
+      text: Not unless you make it necessary.
+    - speaker: Cyrus
+      text: Why?
     - speaker: Pryce
-      text: Meal service will continue unless you stop it.
+      text: Because coercion ruins the data.
+    - speaker: Cyrus
+      text: Data? I'm not one of your patients.
+    - speaker: Pryce
+      text: No.
+    - speaker: Pryce
+      text: Patients are treated. You are measured.
+    - speaker: Cyrus
+      text: So that's why you're letting me choose?
+    - speaker: Pryce
+      text: 'The meal or the call. Yes. '
+    - speaker: Cyrus
+      text: Does the call even go anywhere?
+    - speaker: Pryce
+      text: It rings.
+    - speaker: Cyrus
+      text: That's not what I asked.
+    - speaker: Pryce
+      text: No, but it's what you get before choosing.
+    - speaker: Cyrus
+      text: And after?
+    - speaker: Pryce
+      text: The record continues either way.
+    repeatLines: []
     storyBeatAfterDialogue: 5
 --- !u!212 &212369658
 SpriteRenderer:
@@ -2896,6 +2939,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296579152}
   m_CullTransparentMesh: 1
+--- !u!1 &304159603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304159604}
+  m_Layer: 0
+  m_Name: Lyanna
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304159604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304159603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1155455563}
+  - {fileID: 770572081}
+  m_Father: {fileID: 1754653615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313615983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,6 +3897,185 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370996489}
   m_CullTransparentMesh: 1
+--- !u!1 &381591968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381591969}
+  - component: {fileID: 381591972}
+  - component: {fileID: 381591971}
+  - component: {fileID: 381591970}
+  m_Layer: 0
+  m_Name: Kai
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &381591969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381591968}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 108.91, y: 1.49, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201580439}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &381591970
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381591968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.38, y: 0.47}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4375, y: 0.53125}
+  m_EdgeRadius: 0
+--- !u!114 &381591971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381591968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
+  storyStates:
+  - minimumStoryBeat: 0
+    location: {fileID: 504387198}
+    spriteOverride: {fileID: 0}
+    isVisible: 1
+    isInteractable: 1
+    lines:
+    - speaker: Kai
+      text: Don't bother asking maintenance about the lights.
+    - speaker: Cyrus
+      text: You've tried?
+    - speaker: Kai
+      text: Every Monday for months.
+    - speaker: Cyrus
+      text: It's Monday?
+    - speaker: Kai
+      text: Isn't it?
+    repeatLines: []
+    storyBeatAfterDialogue: -1
+  - minimumStoryBeat: 3
+    location: {fileID: 1556489899}
+    spriteOverride: {fileID: 0}
+    isVisible: 1
+    isInteractable: 0
+    lines: []
+    repeatLines: []
+    storyBeatAfterDialogue: 0
+--- !u!212 &381591972
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381591968}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -3773535540893857118, guid: 20c91ef42c6916140aef397d58748d53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &396901887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,19 +4738,32 @@ MonoBehaviour:
     - speaker: Cyrus
       text: Sounds clinical.
     - speaker: Dean
-      text: 'It has to be, most days.  '
+      text: 'It is. '
     - speaker: Cyrus
-      text: Most days?
+      text: Cold, too.
     - speaker: Dean
-      text: 'Some days I go home and call my father. Just to make sure I still know
-        how. '
-    storyBeatAfterDialogue: 0
+      text: It can be, until it works.
+    - speaker: Cyrus
+      text: What changes?
+    - speaker: Dean
+      text: A chart becomes someone recognising a voice.
+    - speaker: Dean
+      text: 'A test result becomes someone asking for their daughter by name. '
+    - speaker: Dean
+      text: 'A pattern becomes one more good day. '
+    - speaker: Cyrus
+      text: 'That sounds warmer. '
+    - speaker: Dean
+      text: It is.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 1993372594}
     spriteOverride: {fileID: 5361948195310768548, guid: 53fe504bbba9e7548a8db6bb30077100, type: 3}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &421718418
 SpriteRenderer:
@@ -5469,6 +5737,37 @@ MonoBehaviour:
   minimumStoryBeatToShow: 0
   maximumStoryBeatToShow: 2
   includeInactiveChildren: 1
+--- !u!1 &504387197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504387198}
+  m_Layer: 0
+  m_Name: Cafeteria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504387198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504387197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 102.34, y: 0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 749654912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,6 +6848,193 @@ Transform:
   m_Children: []
   m_Father: {fileID: 221099109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586754336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586754337}
+  - component: {fileID: 586754340}
+  - component: {fileID: 586754339}
+  - component: {fileID: 586754338}
+  m_Layer: 0
+  m_Name: Lyanna
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &586754337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586754336}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 114.59, y: 5.15, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201580439}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &586754338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586754336}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.38, y: 0.47}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4375, y: 0.53125}
+  m_EdgeRadius: 0
+--- !u!114 &586754339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586754336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
+  storyStates:
+  - minimumStoryBeat: 0
+    location: {fileID: 1155455563}
+    spriteOverride: {fileID: 0}
+    isVisible: 1
+    isInteractable: 1
+    lines:
+    - speaker: Lyanna
+      text: Are they still serving?
+    - speaker: Cyrus
+      text: Dinner?
+    - speaker: Lyanna
+      text: Anything.
+    - speaker: Lyanna
+      text: I missed a meal last week and felt off for days.
+    - speaker: Cyrus
+      text: Off how?
+    - speaker: Lyanna
+      text: Like the order of things had come loose.
+    - speaker: Cyrus
+      text: The order of things?
+    - speaker: Lyanna
+      text: Yeah.
+    - speaker: Lyanna
+      text: Never doing a long shift without food again.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
+  - minimumStoryBeat: 3
+    location: {fileID: 770572081}
+    spriteOverride: {fileID: -1825930486011638581, guid: dad8942856f4b474dbe32cbeddc423b5, type: 3}
+    isVisible: 1
+    isInteractable: 0
+    lines: []
+    repeatLines: []
+    storyBeatAfterDialogue: 0
+--- !u!212 &586754340
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586754336}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 6
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -9034024255245367701, guid: 20c91ef42c6916140aef397d58748d53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &613583708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7800,6 +8286,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722557804}
   m_CullTransparentMesh: 1
+--- !u!1 &729754765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729754766}
+  m_Layer: 0
+  m_Name: Cafeteria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &729754766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729754765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.51, y: -0.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 824220547}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733559336
 GameObject:
   m_ObjectHideFlags: 0
@@ -8075,6 +8592,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1455586804}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &749654911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749654912}
+  m_Layer: 0
+  m_Name: Kai
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &749654912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749654911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 504387198}
+  - {fileID: 1556489899}
+  m_Father: {fileID: 1754653615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754295965
 GameObject:
@@ -8396,6 +8946,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &770572080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770572081}
+  m_Layer: 0
+  m_Name: Labs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770572081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770572080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 76.06, y: 19.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 304159604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774344267
 GameObject:
   m_ObjectHideFlags: 0
@@ -48693,6 +49274,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &824220546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824220547}
+  m_Layer: 0
+  m_Name: India
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824220547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824220546}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 88.29086, y: 7.936119, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 729754766}
+  - {fileID: 2122135569}
+  m_Father: {fileID: 1754653615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828465782
 GameObject:
   m_ObjectHideFlags: 0
@@ -64932,7 +65546,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -66031,33 +66645,48 @@ MonoBehaviour:
     isInteractable: 1
     lines:
     - speaker: Brendan
-      text: Ah, hello. Security, right? First night, too?
+      text: Ah, hello. Security, right? First night?
     - speaker: Cyrus
       text: 'That''s what they tell me. '
     - speaker: Brendan
-      text: 'You''ll like it here. It''s quiet, but the work matters. '
+      text: 'You''ll like it here. It''s quiet, mostly.  '
+    - speaker: Cyrus
+      text: Mostly?
+    - speaker: Brendan
+      text: Quiet places still carry weight.
     - speaker: Cyrus
       text: What exactly is the work anyway?
     - speaker: Brendan
-      text: 'Memory retention. Degenerative conditions. Things people pretend are
-        rare until it happens to someone close to them.  '
+      text: 'Memory retention. Degenerative conditions. '
     - speaker: Brendan
-      text: 'My mother had dementia. By the end, she could recite songs from her
-        childhood, but couldn''t remember my name. '
+      text: 'Things people pretend only happen to others until it happens to someone
+        close to them. '
+    - speaker: Cyrus
+      text: Someone close to you?
     - speaker: Brendan
-      text: 'If Helix can spare even one family from that, then all this will be
-        worth it.  '
+      text: My mother.
+    - speaker: Brendan
+      text: 'By the end, she would recite songs from her childhood, but couldn''t
+        remember my name. '
+    - speaker: Cyrus
+      text: I'm sorry.
+    - speaker: Brendan
+      text: If Helix can give even one family more time, then the work matters.
     - speaker: Cyrus
       text: That's a lot to carry.
     - speaker: Brendan
-      text: 'It is. But it feels lighter when you can do something. '
-    storyBeatAfterDialogue: 0
+      text: It is.
+    - speaker: Brendan
+      text: But it feels lighter when you can do something.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 1183980820}
     spriteOverride: {fileID: -785796111436880725, guid: 636f4c3aa66cc8a4ea648a4aa1a50537, type: 3}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1000899249
 SpriteRenderer:
@@ -67269,6 +67898,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1519701448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1155455562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155455563}
+  m_Layer: 0
+  m_Name: Cafeteria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1155455563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155455562}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 304159604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174384467
 GameObject:
   m_ObjectHideFlags: 0
@@ -68221,13 +68881,16 @@ MonoBehaviour:
       text: Busy night?
     - speaker: Claire
       text: 'Same as every night. Soup, trays, complaints about the soup. Complaints
-        about the trays. '
-    - speaker: Claire
-      text: 'Which would almost be charming if you don''t think about it too hard. '
+        about the trays. Paperwork if someone skips it. '
     - speaker: Cyrus
-      text: I'll try not to.
+      text: Paperwork?
     - speaker: Claire
-      text: That's the spirit.
+      text: 'Everything here becomes paperwork eventually. '
+    - speaker: Cyrus
+      text: Even soup?
+    - speaker: Claire
+      text: Especially soup.
+    repeatLines: []
     storyBeatAfterDialogue: 0
   - minimumStoryBeat: 3
     location: {fileID: 2024261802}
@@ -68235,6 +68898,7 @@ MonoBehaviour:
     isVisible: 0
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1301836698
 SpriteRenderer:
@@ -68596,16 +69260,24 @@ MonoBehaviour:
     - speaker: Emily
       text: That's what everyone says when they don't want to help.
     - speaker: Cyrus
-      text: Maybe everyone just started?
+      text: Everyone?
     - speaker: Emily
-      text: That would explain a lot.
-    storyBeatAfterDialogue: 0
+      text: Lately, yes.
+    - speaker: Emily
+      text: New faces, new badges, nobody knows where the mugs are.
+    - speaker: Cyrus
+      text: Sounds like they're staffing up.
+    - speaker: Emily
+      text: Then they should start with someone who knows the cupboards.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 1526896847}
     spriteOverride: {fileID: 0}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1337415964
 SpriteRenderer:
@@ -69886,6 +70558,7 @@ MonoBehaviour:
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
   - minimumStoryBeat: 3
     location: {fileID: 1027851633}
@@ -69893,6 +70566,7 @@ MonoBehaviour:
     isVisible: 0
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1479275080
 SpriteRenderer:
@@ -70295,6 +70969,222 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2672772, y: 0.73387146}
   m_EdgeRadius: 0
+--- !u!1 &1518248254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518248255}
+  - component: {fileID: 1518248258}
+  - component: {fileID: 1518248257}
+  - component: {fileID: 1518248256}
+  m_Layer: 0
+  m_Name: India
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518248255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518248254}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 107.41, y: 9.03, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201580439}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1518248256
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518248254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.38, y: 0.47}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4375, y: 0.53125}
+  m_EdgeRadius: 0
+--- !u!114 &1518248257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518248254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8247e9fc96a7f4c95b91b320ab5883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
+  storyStates:
+  - minimumStoryBeat: 0
+    location: {fileID: 729754766}
+    spriteOverride: {fileID: 0}
+    isVisible: 1
+    isInteractable: 1
+    lines:
+    - speaker: India
+      text: You met Pryce yet?
+    - speaker: Cyrus
+      text: Briefly.
+    - speaker: India
+      text: Then you got the speech.
+    - speaker: Cyrus
+      text: The speech?
+    - speaker: India
+      text: 'The work matters. The floor matters. Don''t interrupt the work. '
+    - speaker: Cyrus
+      text: He says that a lot?
+    - speaker: India
+      text: Like his life depended on it.
+    - speaker: Cyrus
+      text: You sound unimpressed.
+    - speaker: India
+      text: 'Kind of. It''s hard not to be when someone turns every conversation
+        into a plaque on the wall. '
+    - speaker: Cyrus
+      text: Then why be here?
+    - speaker: India
+      text: Because my brother sends cards now.
+    - speaker: Cyrus
+      text: Pardon?
+    - speaker: India
+      text: Birthday cards. Bad ones.
+    - speaker: Cyrus
+      text: That sounds normal.
+    - speaker: India
+      text: It wasn't.
+    - speaker: India
+      text: Before the trial, he forgot three birthdays in a row.
+    - speaker: India
+      text: 'Then names. Then whole conversations. '
+    - speaker: Cyrus
+      text: And Helix helped?
+    - speaker: India
+      text: This program helped.
+    - speaker: India
+      text: 'He still has some bad days, but he knows his daughter. '
+    - speaker: India
+      text: 'He knows when she''s pretending not to cry. '
+    - speaker: Cyrus
+      text: And that's why you're here?
+    - speaker: India
+      text: That's why I don't laugh when Pryce says the work matters.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
+  - minimumStoryBeat: 3
+    location: {fileID: 2122135569}
+    spriteOverride: {fileID: 0}
+    isVisible: 1
+    isInteractable: 0
+    lines: []
+    repeatLines: []
+    storyBeatAfterDialogue: 0
+--- !u!212 &1518248258
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518248254}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 2044097436281933803, guid: 20c91ef42c6916140aef397d58748d53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1519701447
 GameObject:
   m_ObjectHideFlags: 0
@@ -70809,6 +71699,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
+--- !u!1 &1556489898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556489899}
+  m_Layer: 0
+  m_Name: Labs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556489899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556489898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.56, y: 13.73, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 749654912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1556640520
 GameObject:
   m_ObjectHideFlags: 0
@@ -70873,20 +71794,26 @@ MonoBehaviour:
     - speaker: Georgia
       text: Sorry. I thought you knew something I didn't.
     - speaker: Cyrus
-      text: First day jitters?
+      text: Does that happen often?
     - speaker: Georgia
-      text: It must be.
+      text: More than I'd like.
     - speaker: Cyrus
-      text: Must be?
+      text: Not knowing things?
     - speaker: Georgia
-      text: I still don't know where anything is!
-    storyBeatAfterDialogue: 0
+      text: 'Knowing just enough to worry. '
+    - speaker: Cyrus
+      text: About the incident?
+    - speaker: Georgia
+      text: What incident?
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 668676764}
     spriteOverride: {fileID: -4373133255062608305, guid: 59d061006efb75147892e1c4b4014113, type: 3}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1556640524
 SpriteRenderer:
@@ -71449,14 +72376,20 @@ MonoBehaviour:
     - speaker: Cyrus
       text: Okay. So why tell me this?
     - speaker: Henry
-      text: 'Because I might not remember saying it later. '
-    storyBeatAfterDialogue: 0
+      text: Maybe the camera isn't the only thing being moved.
+    - speaker: Cyrus
+      text: Then what is?
+    - speaker: Henry
+      text: The question.
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 203816925}
     spriteOverride: {fileID: 0}
     isVisible: 0
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &1591207866
 SpriteRenderer:
@@ -72659,8 +73592,11 @@ Transform:
   - {fileID: 1444990219}
   - {fileID: 1391439524}
   - {fileID: 1460090590}
+  - {fileID: 824220547}
   - {fileID: 325836548}
   - {fileID: 1804718186}
+  - {fileID: 749654912}
+  - {fileID: 304159604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1758226921
@@ -74982,38 +75918,82 @@ MonoBehaviour:
     isInteractable: 1
     lines:
     - speaker: Cyrus
-      text: So what's Pryce like to work for?
+      text: What do you do here?
     - speaker: Janet
-      text: Direct.
+      text: Records, mostly. Trial notes, intake forms, batch logs.
     - speaker: Cyrus
-      text: That's one word for it.
+      text: Paperwork.
     - speaker: Janet
-      text: 'Distant, too. But I don''t think that''s a flaw. I think some distance
-        can be useful in this kind of work. '
+      text: Evidence.
     - speaker: Cyrus
-      text: Useful how?
+      text: That's a generous word for it.
     - speaker: Janet
-      text: It stops you pretending something is fine just because saying otherwise
-        would be uncomfortable.
+      text: It's the right word.
+    - speaker: Janet
+      text: If something works once, that's interesting.
+    - speaker: Janet
+      text: If it works the same way twice, under the same conditions, that's science.
     - speaker: Cyrus
-      text: And Pryce taught you that?
+      text: And if it doesn't?
     - speaker: Janet
-      text: He says "clarity is kinder than comfort".
+      text: Then someone has to record that, too.
     - speaker: Cyrus
-      text: You believe that?
+      text: You sound like you care about that.
     - speaker: Janet
-      text: I believe comfort has lied to me before.
+      text: I do.
     - speaker: Cyrus
-      text: And clarity is better?
+      text: Why?
     - speaker: Janet
-      text: 'Not better. Just harder to be ambushed by. '
-    storyBeatAfterDialogue: 0
+      text: 'My uncle was part of an early trial. '
+    - speaker: Janet
+      text: Back then, the good days were rare.
+    - speaker: Janet
+      text: 'But after the treatment, he had more of them. '
+    - speaker: Janet
+      text: Enough to know my aunt when she came into the room.
+    - speaker: Janet
+      text: 'Enough to ask for music he liked. '
+    - speaker: Janet
+      text: Enough that the end wasn't only that look people get when they don't
+        know where they are or what's going on.
+    - speaker: Cyrus
+      text: And that brought you here?
+    - speaker: Janet
+      text: I suppose it did.
+    - speaker: Cyrus
+      text: Sounds like you've been here a while.
+    - speaker: Janet
+      text: A few months, I think.
+    - speaker: Janet
+      text: Long enough to see what gets sent upstairs.
+    - speaker: Cyrus
+      text: And what's that?
+    - speaker: Janet
+      text: Numbers. Trial notes. Outcomes.
+    - speaker: Janet
+      text: Most of it looks small on paper.
+    - speaker: Janet
+      text: A name remembered. A pattern repeated. A bad week that wasn't quite as
+        bad as the last.
+    - speaker: Cyrus
+      text: And that makes it worth it?
+    - speaker: Janet
+      text: 'It makes it matter. '
+    - speaker: Cyrus
+      text: You hope.
+    - speaker: Janet
+      text: I hope more people get what my uncle got.
+    - speaker: Janet
+      text: 'More time to be themselves. '
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 1225133734}
     spriteOverride: {fileID: 5047860432093209060, guid: 1efca26c370357d469ed791b4a47619d, type: 3}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &2065954678
 SpriteRenderer:
@@ -75422,32 +76402,43 @@ MonoBehaviour:
     - speaker: Cyrus
       text: 'Oh, sorry, it''s the first day for me too. '
     - speaker: Alan
-      text: Hey Emily! I told you! We've got another one!
+      text: You too? Huh.
     - speaker: Cyrus
-      text: What's that about?
+      text: Something wrong?
     - speaker: Alan
-      text: We were arguing about what's going on. It seems like they must hire in
-        batches, because everyone I've spoken to today are all newbies, too.
-    - speaker: Alan
-      text: But surely someone around here must know what's going on?
+      text: 'No, just lots of new personnel. '
     - speaker: Cyrus
-      text: Well, did you get the orientation at least?
+      text: Is that unusual?
     - speaker: Alan
-      text: Yeah, I met the director. Pryce. You?
+      text: Maybe not. Some people say they started today, some a few weeks ago,
+        some say a few months.
+    - speaker: Alan
+      text: 'Still, everyone feels pretty new. '
     - speaker: Cyrus
-      text: Yeah, it seemed like he had the lay of the land.
+      text: Maybe they're staffing up.
     - speaker: Alan
-      text: 'Sure, in an unbalanced kind of way. But I guess that''s what you get
-        with all this high tech mystery. '
+      text: That's what Emily said.
+    - speaker: Cyrus
+      text: For what, though?
     - speaker: Alan
-      text: Anyway, if you figure out where the tech room is, let me know!
-    storyBeatAfterDialogue: 0
+      text: No idea.
+    - speaker: Alan
+      text: Big project, new department, terrible filing system. Take your pick.
+    - speaker: Cyrus
+      text: And the tech room?
+    - speaker: Alan
+      text: Is where I'm to report to.
+    - speaker: Alan
+      text: 'Assuming it exists. '
+    repeatLines: []
+    storyBeatAfterDialogue: -1
   - minimumStoryBeat: 3
     location: {fileID: 1096157811}
     spriteOverride: {fileID: 2583260205964649176, guid: af733219c828545489be1f0152a87e4f, type: 3}
     isVisible: 1
     isInteractable: 0
     lines: []
+    repeatLines: []
     storyBeatAfterDialogue: 0
 --- !u!212 &2086637630
 SpriteRenderer:
@@ -75989,6 +76980,37 @@ MonoBehaviour:
   minimumStoryBeatToShow: 4
   maximumStoryBeatToShow: -1
   includeInactiveChildren: 1
+--- !u!1 &2122135568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2122135569}
+  m_Layer: 0
+  m_Name: Labs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2122135569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122135568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.62, y: 13.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 824220547}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7429684684928977966
 PrefabInstance:
   m_ObjectHideFlags: 0

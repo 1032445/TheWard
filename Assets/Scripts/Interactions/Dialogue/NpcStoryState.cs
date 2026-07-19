@@ -10,6 +10,7 @@ public class NpcStoryState
     [SerializeField] private bool isVisible = true;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private DialogueLine[] lines;
+    [SerializeField] private DialogueLine[] repeatLines;
     [SerializeField] private int storyBeatAfterDialogue = -1;
 
     public int MinimumStoryBeat => minimumStoryBeat;
@@ -17,7 +18,9 @@ public class NpcStoryState
     public bool IsVisible => isVisible;
     public bool IsInteractable => isInteractable;
     public DialogueLine[] Lines => lines;
+    public DialogueLine[] RepeatLines => repeatLines;
     public bool HasDialogue => lines != null && lines.Length > 0;
+    public bool HasRepeatDialogue => repeatLines != null && repeatLines.Length > 0;
     public int StoryBeatAfterDialogue => storyBeatAfterDialogue;
     public bool AdvancesStoryAfterDialogue => storyBeatAfterDialogue >= 0;
 
