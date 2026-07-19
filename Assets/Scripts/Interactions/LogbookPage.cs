@@ -12,7 +12,6 @@ public class LogbookPage
     [SerializeField] private string doseCycle;
     [SerializeField] private string batch;
     [SerializeField] private string machineStatus;
-    [SerializeField] private string facilityResponse;
     [TextArea(4, 10)]
     [SerializeField] private string notes;
 
@@ -24,6 +23,5 @@ public class LogbookPage
     public string DoseCycle => doseCycle;
     public string Batch => batch;
     public string MachineStatus => machineStatus;
-    public string FacilityResponse => facilityResponse;
     public string Notes => notes;
 }

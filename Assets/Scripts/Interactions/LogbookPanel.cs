@@ -140,11 +140,11 @@ public class LogbookPanel : MonoBehaviour
         AddLine(builder, "Dose Cycle", page.DoseCycle);
         AddLine(builder, "Batch", page.Batch);
         AddLine(builder, "Machine Status", page.MachineStatus);
-        AddLine(builder, "Facility Response", page.FacilityResponse);
 
         if (!string.IsNullOrWhiteSpace(page.Notes))
         {
             builder.AppendLine();
+            builder.AppendLine("Notes:");
             builder.AppendLine(page.Notes);
         }
 
