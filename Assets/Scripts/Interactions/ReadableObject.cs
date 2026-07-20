@@ -7,6 +7,7 @@ public class ReadableObject : MonoBehaviour
 
     [Header("Personnel File")]
     [SerializeField] private PersonnelFilePanel personnelFilePanel;
+    [SerializeField] private PersonnelFileRecord[] personnelFileRecords;
     [SerializeField] private PersonnelFileRecord personnelFileRecord;
 
     [Header("Story Progress")]
@@ -48,7 +49,11 @@ public class ReadableObject : MonoBehaviour
             return;
         }
 
-        if (personnelFilePanel != null)
+        if (personnelFilePanel != null && personnelFileRecords != null && personnelFileRecords.Length > 0)
+        {
+            personnelFilePanel.Show(personnelFileRecords);
+        }
+        else if (personnelFilePanel != null)
         {
             personnelFilePanel.Show(personnelFileRecord);
         }

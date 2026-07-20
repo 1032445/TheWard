@@ -11,6 +11,11 @@ public class PersonnelFileRecord
     [SerializeField] private string employeeId;
     [SerializeField] private string clearanceLevel;
     [SerializeField] private string status;
+    [SerializeField] private string cycle;
+    [SerializeField] private string intakeWindow;
+    [SerializeField] private string stability;
+    [SerializeField] private string externalContact;
+    [SerializeField] private string handler;
     [TextArea(3, 8)]
     [SerializeField] private string notes;
 
@@ -21,5 +26,10 @@ public class PersonnelFileRecord
     public string EmployeeId => employeeId;
     public string ClearanceLevel => clearanceLevel;
     public string Status => status;
+    public string Cycle => cycle;
+    public string IntakeWindow => intakeWindow;
+    public string Stability => stability;
+    public string ExternalContact => externalContact;
+    public string Handler => handler;
     public string Notes => notes;
 }

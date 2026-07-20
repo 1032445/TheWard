@@ -5,6 +5,12 @@ public class NpcDialogue : MonoBehaviour
 {
     [SerializeField] private NpcStoryState[] storyStates;
 
+    [Header("Facing Sprites")]
+    [SerializeField] private Sprite faceDownSprite;
+    [SerializeField] private Sprite faceUpSprite;
+    [SerializeField] private Sprite faceLeftSprite;
+    [SerializeField] private Sprite faceRightSprite;
+
     private static DialoguePanel dialoguePanel;
     private NpcStoryState currentState;
     private SpriteRenderer[] spriteRenderers;
@@ -180,11 +186,52 @@ public class NpcDialogue : MonoBehaviour
         }
     }
 
+    public void FaceToward(Vector3 targetPosition)
+    {
+        ApplyStoryState();
+
+        if (currentState == null || !currentState.IsInteractable || currentState.SpriteOverride != null)
+        {
+            return;
+        }
+
+        Vector2 direction = targetPosition - transform.position;
+        if (direction.sqrMagnitude <= 0.0001f)
+        {
+            return;
+        }
+
+        Sprite facingSprite;
+        if (Mathf.Abs(direction.y) >= Mathf.Abs(direction.x))
+        {
+            facingSprite = direction.y >= 0f ? faceUpSprite : faceDownSprite;
+        }
+        else
+        {
+            facingSprite = direction.x >= 0f ? faceRightSprite : faceLeftSprite;
+        }
+
+        ApplyFacingSprite(facingSprite);
+    }
+
     private void ApplySpriteOverride(Sprite spriteOverride)
     {
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             spriteRenderers[i].sprite = spriteOverride != null ? spriteOverride : defaultSprites[i];
+        }
+    }
+
+    private void ApplyFacingSprite(Sprite facingSprite)
+    {
+        if (facingSprite == null)
+        {
+            return;
+        }
+
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            spriteRenderer.sprite = facingSprite;
         }
     }
 

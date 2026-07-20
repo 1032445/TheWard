@@ -2,9 +2,20 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DialoguePanel : MonoBehaviour
 {
+    [Serializable]
+    private class SpeakerPortrait
+    {
+        [SerializeField] private string speakerName;
+        [SerializeField] private Sprite portrait;
+
+        public string SpeakerName => speakerName;
+        public Sprite Portrait => portrait;
+    }
+
     [SerializeField] private GameObject panelRoot;
     [SerializeField] private TextMeshProUGUI speakerText;
     [SerializeField] private TextMeshProUGUI contentText;
@@ -12,6 +23,11 @@ public class DialoguePanel : MonoBehaviour
     [SerializeField] private AudioSource typingAudioSource;
     [SerializeField] private AudioClip typingClip;
     [SerializeField] private bool loopTypingClip = true;
+
+    [Header("Portraits")]
+    [SerializeField] private GameObject portraitRoot;
+    [SerializeField] private Image portraitImage;
+    [SerializeField] private SpeakerPortrait[] speakerPortraits;
 
     public static bool IsAnyDialogueOpen { get; private set; }
 
@@ -41,6 +57,8 @@ public class DialoguePanel : MonoBehaviour
         {
             panelRoot.SetActive(false);
         }
+
+        ClearPortrait();
     }
 
     public void StartDialogue(DialogueLine[] lines, Action onComplete = null)
@@ -79,6 +97,7 @@ public class DialoguePanel : MonoBehaviour
     {
         StopTypingLine();
         panelRoot.SetActive(false);
+        ClearPortrait();
         IsAnyDialogueOpen = false;
         currentLines = null;
         Action completed = onDialogueComplete;
@@ -96,9 +115,66 @@ public class DialoguePanel : MonoBehaviour
             speakerText.gameObject.SetActive(!string.IsNullOrEmpty(line.speaker));
         }
 
+        SetPortrait(line.speaker);
+
         if (contentText != null)
         {
             StartTypingLine(line.text);
+        }
+    }
+
+    private void SetPortrait(string speakerName)
+    {
+        Sprite portrait = GetPortraitForSpeaker(speakerName);
+
+        if (portraitImage != null)
+        {
+            portraitImage.sprite = portrait;
+            portraitImage.enabled = portrait != null;
+        }
+
+        if (portraitRoot != null)
+        {
+            portraitRoot.SetActive(portrait != null);
+        }
+    }
+
+    private Sprite GetPortraitForSpeaker(string speakerName)
+    {
+        if (speakerPortraits == null || string.IsNullOrWhiteSpace(speakerName))
+        {
+            return null;
+        }
+
+        string trimmedSpeakerName = speakerName.Trim();
+
+        foreach (SpeakerPortrait speakerPortrait in speakerPortraits)
+        {
+            if (speakerPortrait == null || string.IsNullOrWhiteSpace(speakerPortrait.SpeakerName))
+            {
+                continue;
+            }
+
+            if (string.Equals(speakerPortrait.SpeakerName.Trim(), trimmedSpeakerName, StringComparison.OrdinalIgnoreCase))
+            {
+                return speakerPortrait.Portrait;
+            }
+        }
+
+        return null;
+    }
+
+    private void ClearPortrait()
+    {
+        if (portraitImage != null)
+        {
+            portraitImage.sprite = null;
+            portraitImage.enabled = false;
+        }
+
+        if (portraitRoot != null)
+        {
+            portraitRoot.SetActive(false);
         }
     }
 

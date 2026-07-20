@@ -16,11 +16,13 @@ public class PlayerInteractor : MonoBehaviour
 
     private TextPanel textPanel;
     private DialoguePanel dialoguePanel;
+    private PlayerController playerController;
 
     private void Start()
     {
         textPanel = FindAnyObjectByType<TextPanel>();
         dialoguePanel = FindAnyObjectByType<DialoguePanel>();
+        playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -60,6 +62,12 @@ public class PlayerInteractor : MonoBehaviour
         {
             if (currentNpc.CanInteract)
             {
+                if (playerController != null)
+                {
+                    playerController.FaceToward(currentNpc.transform.position);
+                }
+
+                currentNpc.FaceToward(transform.position);
                 currentNpc.Interact();
             }
             else

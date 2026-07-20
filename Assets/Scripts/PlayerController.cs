@@ -69,6 +69,37 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = moveInput * moveSpeed;
     }
 
+    public void FaceToward(Vector3 targetPosition)
+    {
+        if (animator == null)
+        {
+            return;
+        }
+
+        Vector2 direction = targetPosition - transform.position;
+        if (direction.sqrMagnitude <= 0.0001f)
+        {
+            return;
+        }
+
+        Vector2 facingDirection;
+        if (Mathf.Abs(direction.y) >= Mathf.Abs(direction.x))
+        {
+            facingDirection = new Vector2(0f, Mathf.Sign(direction.y));
+        }
+        else
+        {
+            facingDirection = new Vector2(Mathf.Sign(direction.x), 0f);
+        }
+
+        moveInput = Vector2.zero;
+        animator.SetFloat("MoveX", 0f);
+        animator.SetFloat("MoveY", 0f);
+        animator.SetFloat("Speed", 0f);
+        animator.SetFloat("LastMoveX", facingDirection.x);
+        animator.SetFloat("LastMoveY", facingDirection.y);
+    }
+
     private void UpdateAnimator()
     {
         if (animator == null)
