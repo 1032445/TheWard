@@ -70,6 +70,7 @@ public class RadioMessageTrigger : MonoBehaviour
             || DialoguePanel.IsAnyDialogueOpen
             || PersonnelFilePanel.IsAnyPersonnelFileOpen
             || LogbookPanel.IsAnyLogbookOpen
+            || PatrolBoardPanel.IsAnyPatrolBoardOpen
             || EndingChoicePanel.IsAnyEndingChoiceOpen)
         {
             yield return null;

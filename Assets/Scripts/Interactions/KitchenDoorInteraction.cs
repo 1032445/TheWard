@@ -6,6 +6,8 @@ public class KitchenDoorInteraction : MonoBehaviour
     [SerializeField] private int patrolTaskNumber = 1;
     [SerializeField] private DialogueLine[] staffDialogue;
     [TextArea(2, 5)]
+    [SerializeField] private string checkedMessage = "The kitchen access light is red. The door does not give.";
+    [TextArea(2, 5)]
     [SerializeField] private string tooEarlyMessage = "This is scheduled later in the patrol.";
     [TextArea(2, 5)]
     [SerializeField] private string alreadyCheckedMessage = "The kitchen doors are already checked.";
@@ -17,8 +19,8 @@ public class KitchenDoorInteraction : MonoBehaviour
     [SerializeField] private string openedMessage = "The kitchen doors open.";
     [SerializeField] private bool showOpenedMessage = true;
 
-    private static TextPanel textPanel;
-    private static DialoguePanel dialoguePanel;
+    private TextPanel textPanel;
+    private DialoguePanel dialoguePanel;
     private bool isOpen;
 
     private void Start()
@@ -28,19 +30,22 @@ public class KitchenDoorInteraction : MonoBehaviour
             doorObjectToDisable = gameObject;
         }
 
-        if (textPanel == null)
-        {
-            textPanel = FindAnyObjectByType<TextPanel>();
-        }
-
-        if (dialoguePanel == null)
-        {
-            dialoguePanel = FindAnyObjectByType<DialoguePanel>();
-        }
+        textPanel = FindAnyObjectByType<TextPanel>();
+        dialoguePanel = FindAnyObjectByType<DialoguePanel>();
     }
 
     public void Interact()
     {
+        if (PatrolManager.Instance != null)
+        {
+            PatrolTaskResult patrolResult = GetPatrolTaskState();
+            if (patrolResult == PatrolTaskResult.TooEarly || patrolResult == PatrolTaskResult.Completed)
+            {
+                CheckDoorForPatrol();
+                return;
+            }
+        }
+
         if (CanOpenDoor())
         {
             OpenDoor();
@@ -48,6 +53,21 @@ public class KitchenDoorInteraction : MonoBehaviour
         }
 
         CheckDoorForPatrol();
+    }
+
+    private PatrolTaskResult GetPatrolTaskState()
+    {
+        if (patrolTaskNumber < PatrolManager.Instance.CurrentTaskNumber)
+        {
+            return PatrolTaskResult.AlreadyDone;
+        }
+
+        if (patrolTaskNumber > PatrolManager.Instance.CurrentTaskNumber)
+        {
+            return PatrolTaskResult.TooEarly;
+        }
+
+        return PatrolTaskResult.Completed;
     }
 
     private bool CanOpenDoor()
@@ -84,6 +104,7 @@ public class KitchenDoorInteraction : MonoBehaviour
         else
         {
             CompletePatrolTask();
+            ShowMessage(string.IsNullOrWhiteSpace(checkedMessage) ? "Kitchen access checked." : checkedMessage);
         }
     }
 

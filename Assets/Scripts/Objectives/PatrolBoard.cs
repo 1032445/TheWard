@@ -7,6 +7,7 @@ public class PatrolBoard : MonoBehaviour
     [SerializeField] private string completeText = "Patrol route complete.";
 
     private static TextPanel textPanel;
+    private static PatrolBoardPanel patrolBoardPanel;
 
     private void Start()
     {
@@ -14,10 +15,21 @@ public class PatrolBoard : MonoBehaviour
         {
             textPanel = FindAnyObjectByType<TextPanel>();
         }
+
+        if (patrolBoardPanel == null)
+        {
+            patrolBoardPanel = FindAnyObjectByType<PatrolBoardPanel>(FindObjectsInactive.Include);
+        }
     }
 
     public void Interact()
     {
+        if (patrolBoardPanel != null)
+        {
+            patrolBoardPanel.Show();
+            return;
+        }
+
         if (textPanel != null)
         {
             textPanel.Show(BuildBoardText());

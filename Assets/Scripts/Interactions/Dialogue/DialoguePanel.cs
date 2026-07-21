@@ -30,6 +30,7 @@ public class DialoguePanel : MonoBehaviour
     [SerializeField] private SpeakerPortrait[] speakerPortraits;
 
     public static bool IsAnyDialogueOpen { get; private set; }
+    public static DialoguePanel Primary { get; private set; }
 
     private DialogueLine[] currentLines;
     private int currentIndex;
@@ -49,10 +50,28 @@ public class DialoguePanel : MonoBehaviour
     public static void ResetOpenState()
     {
         IsAnyDialogueOpen = false;
+        Primary = null;
+    }
+
+    public static void HideOpenPanel()
+    {
+        DialoguePanel panel = FindAnyObjectByType<DialoguePanel>(FindObjectsInactive.Include);
+        if (panel != null && panel.IsOpen)
+        {
+            panel.Close();
+            return;
+        }
+
+        IsAnyDialogueOpen = false;
     }
 
     private void Awake()
     {
+        if (Primary == null && panelRoot != null && speakerText != null && contentText != null)
+        {
+            Primary = this;
+        }
+
         if (panelRoot != null)
         {
             panelRoot.SetActive(false);
@@ -61,9 +80,24 @@ public class DialoguePanel : MonoBehaviour
         ClearPortrait();
     }
 
+    private void OnDestroy()
+    {
+        if (Primary == this)
+        {
+            Primary = null;
+        }
+    }
+
     public void StartDialogue(DialogueLine[] lines, Action onComplete = null)
     {
         if (lines == null || lines.Length == 0) return;
+
+        if (panelRoot == null)
+        {
+            Debug.LogWarning("dialogue panel has no panel root assigned.");
+            onComplete?.Invoke();
+            return;
+        }
 
         currentLines = lines;
         currentIndex = 0;
@@ -135,27 +169,23 @@ public class DialoguePanel : MonoBehaviour
 
         if (portraitRoot != null)
         {
-            portraitRoot.SetActive(portrait != null);
+            if (portraitRoot != panelRoot)
+            {
+                portraitRoot.SetActive(portrait != null);
+            }
         }
     }
 
     private Sprite GetPortraitForSpeaker(string speakerName)
     {
-        if (speakerPortraits == null || string.IsNullOrWhiteSpace(speakerName))
+        if (speakerPortraits == null)
         {
             return null;
         }
 
-        string trimmedSpeakerName = speakerName.Trim();
-
         foreach (SpeakerPortrait speakerPortrait in speakerPortraits)
         {
-            if (speakerPortrait == null || string.IsNullOrWhiteSpace(speakerPortrait.SpeakerName))
-            {
-                continue;
-            }
-
-            if (string.Equals(speakerPortrait.SpeakerName.Trim(), trimmedSpeakerName, StringComparison.OrdinalIgnoreCase))
+            if (speakerPortrait != null && speakerPortrait.SpeakerName == speakerName)
             {
                 return speakerPortrait.Portrait;
             }
@@ -174,7 +204,10 @@ public class DialoguePanel : MonoBehaviour
 
         if (portraitRoot != null)
         {
-            portraitRoot.SetActive(false);
+            if (portraitRoot != panelRoot)
+            {
+                portraitRoot.SetActive(false);
+            }
         }
     }
 

@@ -5,6 +5,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private GameObject interactPromptUI;
     [SerializeField] private Key interactKey = Key.E;
+    [SerializeField] private Key taskBoardKey = Key.T;
 
     private ReadableObject currentReadable;
     private NpcDialogue currentNpc;
@@ -16,12 +17,14 @@ public class PlayerInteractor : MonoBehaviour
 
     private TextPanel textPanel;
     private DialoguePanel dialoguePanel;
+    private PatrolBoardPanel patrolBoardPanel;
     private PlayerController playerController;
 
     private void Start()
     {
         textPanel = FindAnyObjectByType<TextPanel>();
         dialoguePanel = FindAnyObjectByType<DialoguePanel>();
+        patrolBoardPanel = FindAnyObjectByType<PatrolBoardPanel>(FindObjectsInactive.Include);
         playerController = GetComponent<PlayerController>();
     }
 
@@ -32,7 +35,24 @@ public class PlayerInteractor : MonoBehaviour
             return;
         }
 
+        if (Keyboard.current == null)
+        {
+            return;
+        }
+
+        if (Keyboard.current[taskBoardKey].wasPressedThisFrame)
+        {
+            ToggleTaskBoard();
+            return;
+        }
+
         if (!Keyboard.current[interactKey].wasPressedThisFrame) return;
+
+        if (DialoguePanel.IsAnyDialogueOpen && (dialoguePanel == null || !dialoguePanel.IsOpen))
+        {
+            DialoguePanel.HideOpenPanel();
+            return;
+        }
 
         if (dialoguePanel != null && dialoguePanel.IsOpen)
         {
@@ -49,6 +69,12 @@ public class PlayerInteractor : MonoBehaviour
         if (LogbookPanel.IsAnyLogbookOpen)
         {
             LogbookPanel.HideOpenPanel();
+            return;
+        }
+
+        if (PatrolBoardPanel.IsAnyPatrolBoardOpen)
+        {
+            PatrolBoardPanel.HideOpenPanel();
             return;
         }
 
@@ -295,5 +321,43 @@ public class PlayerInteractor : MonoBehaviour
         {
             interactPromptUI.SetActive(visible);
         }
+    }
+
+    private void ToggleTaskBoard()
+    {
+        if (PatrolBoardPanel.IsAnyPatrolBoardOpen)
+        {
+            PatrolBoardPanel.HideOpenPanel();
+            return;
+        }
+
+        if (IsReadingOrTalking())
+        {
+            return;
+        }
+
+        if (patrolBoardPanel == null)
+        {
+            patrolBoardPanel = FindAnyObjectByType<PatrolBoardPanel>(FindObjectsInactive.Include);
+        }
+
+        if (patrolBoardPanel != null)
+        {
+            patrolBoardPanel.Show();
+        }
+        else
+        {
+            Debug.LogWarning("no patrol board panel found in scene.");
+        }
+    }
+
+    private bool IsReadingOrTalking()
+    {
+        return TextPanel.IsAnyPanelOpen
+            || DialoguePanel.IsAnyDialogueOpen
+            || PersonnelFilePanel.IsAnyPersonnelFileOpen
+            || LogbookPanel.IsAnyLogbookOpen
+            || EndingChoicePanel.IsAnyEndingChoiceOpen
+            || EndingSequence.IsEndingSequencePlaying;
     }
 }
