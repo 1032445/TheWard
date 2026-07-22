@@ -2155,7 +2155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
+  textPanelToOpen: {fileID: 0}
   content: Contains various medicines. You've never even heard of most of these.
+  contentPages: []
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -2283,7 +2289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
+  textPanelToOpen: {fileID: 0}
   content: 
+  contentPages: []
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 1072823049}
   personnelFileRecords:
   - title: Personnel File
@@ -2863,8 +2875,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 6
-  completedMessage: "PA System on Standy. \nThe speaker gives a brief click of static,
-    then settles into silence."
+  textPanel: {fileID: 1344667903}
+  completedTitle: 'PA System on Standy '
+  completedDescription: The speaker gives a brief click of static, then settles into
+    silence.
+  completedMessage: '
+
+'
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!212 &288808137
@@ -3476,7 +3493,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329041788}
-  - component: {fileID: 329041786}
   - component: {fileID: 329041789}
   m_Layer: 0
   m_Name: UI Manager
@@ -3485,20 +3501,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &329041786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329041785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9fcf4cda02d7c44b6dc1bcf12d288a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextPanel
-  panelRoot: {fileID: 1344667898}
-  contentText: {fileID: 1305882064}
 --- !u!4 &329041788
 Transform:
   m_ObjectHideFlags: 0
@@ -45645,6 +45647,98 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &521435679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521435680}
+  - component: {fileID: 521435682}
+  - component: {fileID: 521435681}
+  - component: {fileID: 521435683}
+  m_Layer: 5
+  m_Name: Readable Object Text Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &521435680
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521435679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2093256398}
+  m_Father: {fileID: 998208112}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 4.130127, y: -359}
+  m_SizeDelta: {x: -14.0713, y: -791.9226}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &521435681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521435679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &521435682
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521435679}
+  m_CullTransparentMesh: 1
+--- !u!114 &521435683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521435679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9fcf4cda02d7c44b6dc1bcf12d288a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextPanel
+  panelRoot: {fileID: 2093256397}
+  titleText: {fileID: 0}
+  contentText: {fileID: 1270311020}
 --- !u!1 &530293160
 GameObject:
   m_ObjectHideFlags: 0
@@ -45951,12 +46045,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
+  textPanelToOpen: {fileID: 521435679}
   content: 'HX-7B Dietary Integration Unit
 
     Batch Route: Kitchen Service
 
     FAULT
     -- Containment pressure unstable'
+  contentPages: []
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -47624,10 +47724,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 5
-  completedMessage: 'Medical Cabinet Secure.
-
-    The latch holds. Inventory tags
-    in place. '
+  textPanel: {fileID: 1344667903}
+  completedTitle: Medical Cabinet Secure
+  completedDescription: The latch holds. Inventory tags in place. Nobody's getting
+    in there.
+  completedMessage: "\n "
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!1 &640867093
@@ -47826,10 +47927,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 3
-  completedMessage: 'Laboratory Seals Active.
-
-    The seal indicator is lit. Access
-    remains restricted. '
+  textPanel: {fileID: 1344667903}
+  completedTitle: Laboratory Seals Active
+  completedDescription: The seal indicator is lit. Access remains restricted through
+    a 9 digit code.
+  completedMessage: "\n "
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!212 &675708180
@@ -105360,14 +105462,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
-  content: 'You open your locker and find your ID card and badge, some keys, a flashlight
+  textPanelToOpen: {fileID: 521435679}
+  content: '
+
+
+'
+  contentPages:
+  - You open your locker and find your ID card and badge, some keys, a flashlight
     and a radio.
+  - 'There''s also a bunch of miscellaneous flyers and scribblings left behind, but
+    they''re indecipherable.
 
-
-    There''s also a bunch of miscellaneous flyers and scribblings
-    left behind, but they''re indecipherable.
-
-    Probably from the last guard.'
+'
+  - Probably from the last guard.
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -105904,6 +106015,7 @@ RectTransform:
   m_Children:
   - {fileID: 1424379612}
   - {fileID: 1344667899}
+  - {fileID: 521435680}
   - {fileID: 828465783}
   - {fileID: 1072823048}
   - {fileID: 996250412}
@@ -106509,10 +106621,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 1
-  completedMessage: 'Staff Lockers Secure.
-
-    The locker bank is sealed shut until
-    the end of the shift.'
+  textPanel: {fileID: 1344667903}
+  completedTitle: Staff Lockers Secure
+  completedDescription: The locker bank is sealed shut until the end of the shift.
+  completedMessage: 
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!212 &1015082743
@@ -106775,12 +106887,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
-  content: 'NOTICE
-
-    All staff meals are to be taken before the end of shift.
+  textPanelToOpen: {fileID: 521435679}
+  content: 'All staff meals are to be taken before the end of shift.
 
     Missed
     intake must be reported to Floor Lead immediately.'
+  contentPages: []
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -106862,6 +106978,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &1054991137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054991138}
+  - component: {fileID: 1054991140}
+  - component: {fileID: 1054991139}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1054991138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054991137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48738, y: 0.48738, z: 0.48738}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2093256398}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.7098}
+  m_SizeDelta: {x: 2000, y: 471.2335}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1054991139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054991137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cc6984de439c3b747a45e75991745ee2, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1054991140
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054991137}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1055469618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107845,6 +108036,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1455586804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1193544932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193544933}
+  m_Layer: 5
+  m_Name: Panel Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1193544933
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193544932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1878006924}
+  - {fileID: 2117395092}
+  - {fileID: 1305882063}
+  m_Father: {fileID: 1344667899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1197392796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 375795555261632485, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
@@ -107994,6 +108223,146 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 375795555261632485, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
   m_PrefabInstance: {fileID: 1243545026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1270311018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270311019}
+  - component: {fileID: 1270311021}
+  - component: {fileID: 1270311020}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1270311019
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270311018}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2093256398}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3, y: -12}
+  m_SizeDelta: {x: 723.4458, y: 924.661}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1270311020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270311018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'This is how it will look when it plays. This line and then this line
+
+    and
+    here'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 15916939d94c16a47be774d078323df8, type: 2}
+  m_sharedMaterial: {fileID: 338431249846496251, guid: 15916939d94c16a47be774d078323df8, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 39.87
+  m_fontSizeBase: 39.87
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 26.9
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -69.173096, y: 373.788, z: -81.003174, w: 380.73773}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1270311021
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270311018}
+  m_CullTransparentMesh: 1
 --- !u!1 &1271171001
 GameObject:
   m_ObjectHideFlags: 0
@@ -108484,7 +108853,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
+  textPanelToOpen: {fileID: 0}
   content: Contains various medicines. You've never even heard of most of these.
+  contentPages: []
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -108783,7 +109158,7 @@ GameObject:
   - component: {fileID: 1305882065}
   - component: {fileID: 1305882064}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Description Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108796,16 +109171,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305882062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1344667899}
+  m_Father: {fileID: 1193544933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8143, y: -27}
+  m_AnchoredPosition: {x: -3, y: -54}
   m_SizeDelta: {x: 723.4458, y: 924.661}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305882064
@@ -108828,17 +109203,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'This is how it will look when it plays. This line and then this line
+
+    and
+    here'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 15916939d94c16a47be774d078323df8, type: 2}
+  m_sharedMaterial: {fileID: 338431249846496251, guid: 15916939d94c16a47be774d078323df8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -108855,8 +109233,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35.44
+  m_fontSizeBase: 35.44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -108868,7 +109246,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 1.6
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -108894,7 +109272,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -500.93207, y: 351.63733, z: -520.6316, w: 330.95273}
+  m_margin: {x: -81.84711, y: 373.788, z: -81.003174, w: 375.10483}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -109217,13 +109595,14 @@ GameObject:
   - component: {fileID: 1344667899}
   - component: {fileID: 1344667902}
   - component: {fileID: 1344667901}
+  - component: {fileID: 1344667903}
   m_Layer: 5
-  m_Name: LockerPanel
+  m_Name: Patrol Task Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1344667899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109233,10 +109612,10 @@ RectTransform:
   m_GameObject: {fileID: 1344667898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94499993, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1305882063}
+  - {fileID: 1193544933}
   m_Father: {fileID: 998208112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -109257,15 +109636,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -109282,6 +109661,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344667898}
   m_CullTransparentMesh: 1
+--- !u!114 &1344667903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344667898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9fcf4cda02d7c44b6dc1bcf12d288a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextPanel
+  panelRoot: {fileID: 1193544932}
+  titleText: {fileID: 2117395093}
+  contentText: {fileID: 1305882064}
 --- !u!1 &1345737517
 GameObject:
   m_ObjectHideFlags: 0
@@ -113763,8 +114157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bff4517e260e04cad75bb55eb3320a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadableObject
-  content: 'You move the camera back into place, but it readjusts to how it was when
-    you entered. The movement seems more mechanical, rather than falling with gravity.  '
+  textPanelToOpen: {fileID: 521435679}
+  content: ' '
+  contentPages:
+  - You move the camera back into place, but it readjusts to how it was when you
+    entered.
+  - 'The movement seems more mechanical, rather than falling with gravity. '
+  imagePanelToOpen: {fileID: 0}
+  readableImage: {fileID: 0}
+  imageTitle: 
+  imageDescription: 
   personnelFilePanel: {fileID: 0}
   personnelFileRecords: []
   personnelFileRecord:
@@ -114891,10 +115293,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 4
-  completedMessage: 'Elevator Access Panel Restricted.
+  textPanel: {fileID: 1344667903}
+  completedTitle: Elevator Access Panel Restricted
+  completedDescription: 'The panel rejects clearance under level 3. Everything is
+    in working order. '
+  completedMessage: '
 
-    The panel rejects clearance
-    under level 3.  '
+'
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!212 &1873824512
@@ -115039,6 +115444,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 375795555261632485, guid: b20f9fa25b62a4c479da54a7762a6e9d, type: 3}
   m_PrefabInstance: {fileID: 1875401995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1878006923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878006924}
+  - component: {fileID: 1878006926}
+  - component: {fileID: 1878006925}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1878006924
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878006923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48738, y: 0.48738, z: 0.48738}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193544933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.7098}
+  m_SizeDelta: {x: 2000, y: 471.2335}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1878006925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878006923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cc6984de439c3b747a45e75991745ee2, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1878006926
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878006923}
+  m_CullTransparentMesh: 1
 --- !u!1 &1881852965
 GameObject:
   m_ObjectHideFlags: 0
@@ -116039,10 +116519,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolTaskObject
   taskNumber: 2
-  completedMessage: 'Power Unit Functional
-
-    The unit hums steadily. Output levels
-    are within range. '
+  textPanel: {fileID: 1344667903}
+  completedTitle: Power Unit Functional
+  completedDescription: The unit hums steadily. Output levels are within the optimal
+    range.
+  completedMessage: "\n "
   tooEarlyMessage: This is scheduled later in the patrol.
   alreadyDoneMessage: Already checked.
 --- !u!212 &2019712204
@@ -117233,6 +117714,43 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4375, y: 0.5625}
   m_EdgeRadius: 0
+--- !u!1 &2093256397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093256398}
+  m_Layer: 5
+  m_Name: Panel Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2093256398
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093256397}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1054991138}
+  - {fileID: 1270311019}
+  m_Father: {fileID: 521435680}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2095215865
 GameObject:
   m_ObjectHideFlags: 0
@@ -117331,6 +117849,143 @@ Transform:
   - {fileID: 2118644645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2117395091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117395092}
+  - component: {fileID: 2117395094}
+  - component: {fileID: 2117395093}
+  m_Layer: 5
+  m_Name: Title Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2117395092
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117395091}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193544933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3, y: -6}
+  m_SizeDelta: {x: 723.4458, y: 924.661}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2117395093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117395091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Title Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 15916939d94c16a47be774d078323df8, type: 2}
+  m_sharedMaterial: {fileID: 338431249846496251, guid: 15916939d94c16a47be774d078323df8, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 42.96
+  m_fontSizeBase: 42.96
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 28.2
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -81.84711, y: 368.19482, z: -81.003174, w: 375.10483}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2117395094
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117395091}
+  m_CullTransparentMesh: 1
 --- !u!1 &2118644643
 GameObject:
   m_ObjectHideFlags: 0

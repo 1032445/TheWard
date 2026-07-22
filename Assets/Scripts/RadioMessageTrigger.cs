@@ -71,6 +71,7 @@ public class RadioMessageTrigger : MonoBehaviour
             || PersonnelFilePanel.IsAnyPersonnelFileOpen
             || LogbookPanel.IsAnyLogbookOpen
             || PatrolBoardPanel.IsAnyPatrolBoardOpen
+            || ReadableImagePanel.IsAnyReadableImageOpen
             || EndingChoicePanel.IsAnyEndingChoiceOpen)
         {
             yield return null;

@@ -119,6 +119,7 @@ public class EndingSequence : MonoBehaviour
         PersonnelFilePanel.HideOpenPanel();
         LogbookPanel.HideOpenPanel();
         PatrolBoardPanel.HideOpenPanel();
+        ReadableImagePanel.HideOpenPanel();
         EndingChoicePanel.HideOpenPanel();
         EndingChoiceObject.ResetChoiceState();
     }

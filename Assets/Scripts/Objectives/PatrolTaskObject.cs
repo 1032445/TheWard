@@ -3,22 +3,19 @@ using UnityEngine;
 public class PatrolTaskObject : MonoBehaviour
 {
     [SerializeField] private int taskNumber = 1;
+    [SerializeField] private TextPanel textPanel;
+
+    [Header("Completed Popup")]
+    [SerializeField] private string completedTitle;
+    [TextArea(2, 5)]
+    [SerializeField] private string completedDescription;
     [TextArea(2, 5)]
     [SerializeField] private string completedMessage = "Checked.";
+    [Header("Other Messages")]
     [TextArea(2, 5)]
     [SerializeField] private string tooEarlyMessage = "This is scheduled later in the patrol.";
     [TextArea(2, 5)]
     [SerializeField] private string alreadyDoneMessage = "Already checked.";
-
-    private static TextPanel textPanel;
-
-    private void Start()
-    {
-        if (textPanel == null)
-        {
-            textPanel = FindAnyObjectByType<TextPanel>();
-        }
-    }
 
     public void Interact()
     {
@@ -32,7 +29,7 @@ public class PatrolTaskObject : MonoBehaviour
 
         if (result == PatrolTaskResult.Completed)
         {
-            ShowMessage(completedMessage);
+            ShowCompletedMessage();
         }
         else if (result == PatrolTaskResult.TooEarly)
         {
@@ -44,6 +41,51 @@ public class PatrolTaskObject : MonoBehaviour
         }
     }
 
+    private void ShowCompletedMessage()
+    {
+        if (!string.IsNullOrEmpty(completedTitle) || !string.IsNullOrEmpty(completedDescription))
+        {
+            ShowMessage(completedTitle, completedDescription);
+            return;
+        }
+
+        ShowSplitMessage(completedMessage);
+    }
+
+    private void ShowSplitMessage(string message)
+    {
+        if (string.IsNullOrEmpty(message))
+        {
+            ShowMessage("");
+            return;
+        }
+
+        string normalizedMessage = message.Replace("\r\n", "\n");
+        int firstLineEnd = normalizedMessage.IndexOf('\n');
+
+        if (firstLineEnd < 0)
+        {
+            ShowMessage(normalizedMessage);
+            return;
+        }
+
+        string title = normalizedMessage.Substring(0, firstLineEnd);
+        string description = normalizedMessage.Substring(firstLineEnd + 1).TrimStart('\n');
+        ShowMessage(title, description);
+    }
+
+    private void ShowMessage(string title, string message)
+    {
+        if (textPanel != null)
+        {
+            textPanel.Show(title, message);
+        }
+        else
+        {
+            Debug.LogWarning("patrol task object has no text panel assigned.");
+        }
+    }
+
     private void ShowMessage(string message)
     {
         if (textPanel != null)
@@ -52,7 +94,7 @@ public class PatrolTaskObject : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(message);
+            Debug.LogWarning("patrol task object has no text panel assigned.");
         }
     }
 }

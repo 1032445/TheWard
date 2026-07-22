@@ -78,9 +78,15 @@ public class PlayerInteractor : MonoBehaviour
             return;
         }
 
-        if (textPanel != null && textPanel.IsOpen)
+        if (ReadableImagePanel.IsAnyReadableImageOpen)
         {
-            textPanel.Hide();
+            ReadableImagePanel.HideOpenPanel();
+            return;
+        }
+
+        if (TextPanel.IsAnyPanelOpen)
+        {
+            TextPanel.AdvanceOpenPanel();
             return;
         }
 
@@ -357,6 +363,7 @@ public class PlayerInteractor : MonoBehaviour
             || DialoguePanel.IsAnyDialogueOpen
             || PersonnelFilePanel.IsAnyPersonnelFileOpen
             || LogbookPanel.IsAnyLogbookOpen
+            || ReadableImagePanel.IsAnyReadableImageOpen
             || EndingChoicePanel.IsAnyEndingChoiceOpen
             || EndingSequence.IsEndingSequencePlaying;
     }

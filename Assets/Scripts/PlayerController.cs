@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
             || PersonnelFilePanel.IsAnyPersonnelFileOpen
             || LogbookPanel.IsAnyLogbookOpen
             || PatrolBoardPanel.IsAnyPatrolBoardOpen
+            || ReadableImagePanel.IsAnyReadableImageOpen
             || EndingChoicePanel.IsAnyEndingChoiceOpen
             || EndingSequence.IsEndingSequencePlaying)
         {
