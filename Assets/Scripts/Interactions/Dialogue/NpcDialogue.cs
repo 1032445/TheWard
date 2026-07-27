@@ -4,6 +4,7 @@ using UnityEngine;
 public class NpcDialogue : MonoBehaviour
 {
     [SerializeField] private NpcStoryState[] storyStates;
+    [SerializeField] private bool useScenePlacementForInitialState = true;
 
     [Header("Facing Sprites")]
     [SerializeField] private Sprite faceDownSprite;
@@ -15,6 +16,7 @@ public class NpcDialogue : MonoBehaviour
     private NpcStoryState currentState;
     private SpriteRenderer[] spriteRenderers;
     private Sprite[] defaultSprites;
+    private int[] defaultSortingOrders;
     private Collider2D[] colliders;
     private readonly HashSet<NpcStoryState> completedStates = new HashSet<NpcStoryState>();
     private int appliedStoryBeat = int.MinValue;
@@ -36,10 +38,12 @@ public class NpcDialogue : MonoBehaviour
     {
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
         defaultSprites = new Sprite[spriteRenderers.Length];
+        defaultSortingOrders = new int[spriteRenderers.Length];
 
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             defaultSprites[i] = spriteRenderers[i].sprite;
+            defaultSortingOrders[i] = spriteRenderers[i].sortingOrder;
         }
 
         colliders = GetComponentsInChildren<Collider2D>(true);
@@ -116,15 +120,48 @@ public class NpcDialogue : MonoBehaviour
         if (currentState == null)
         {
             ApplySpriteOverride(null);
+            ApplySortingOrder(null);
             SetVisible(true);
             SetCollidersEnabled(true);
             return;
         }
 
-        currentState.ApplyLocation(transform);
+        if (!ShouldKeepScenePlacement(currentState))
+        {
+            currentState.ApplyLocation(transform);
+        }
+
         ApplySpriteOverride(currentState.SpriteOverride);
+        ApplySortingOrder(currentState);
         SetVisible(currentState.IsVisible);
         SetCollidersEnabled(currentState.IsInteractable);
+    }
+
+    private bool ShouldKeepScenePlacement(NpcStoryState state)
+    {
+        return useScenePlacementForInitialState
+            && state != null
+            && state.MinimumStoryBeat == GetEarliestStoryStateBeat();
+    }
+
+    private int GetEarliestStoryStateBeat()
+    {
+        if (storyStates == null || storyStates.Length == 0)
+        {
+            return int.MinValue;
+        }
+
+        int earliestBeat = int.MaxValue;
+
+        foreach (NpcStoryState state in storyStates)
+        {
+            if (state != null && state.MinimumStoryBeat < earliestBeat)
+            {
+                earliestBeat = state.MinimumStoryBeat;
+            }
+        }
+
+        return earliestBeat;
     }
 
     private NpcStoryState FindStateForStoryBeat(int storyBeat)
@@ -219,6 +256,16 @@ public class NpcDialogue : MonoBehaviour
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             spriteRenderers[i].sprite = spriteOverride != null ? spriteOverride : defaultSprites[i];
+        }
+    }
+
+    private void ApplySortingOrder(NpcStoryState state)
+    {
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].sortingOrder = state != null && state.OverrideSortingOrder
+                ? state.SortingOrder
+                : defaultSortingOrders[i];
         }
     }
 

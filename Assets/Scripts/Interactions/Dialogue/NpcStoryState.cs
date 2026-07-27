@@ -7,6 +7,11 @@ public class NpcStoryState
     [SerializeField] private int minimumStoryBeat;
     [SerializeField] private Transform location;
     [SerializeField] private Sprite spriteOverride;
+
+    [Header("Rendering")]
+    [SerializeField] private bool overrideSortingOrder;
+    [SerializeField] private int sortingOrder;
+
     [SerializeField] private bool isVisible = true;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private DialogueLine[] lines;
@@ -15,6 +20,8 @@ public class NpcStoryState
 
     public int MinimumStoryBeat => minimumStoryBeat;
     public Sprite SpriteOverride => spriteOverride;
+    public bool OverrideSortingOrder => overrideSortingOrder;
+    public int SortingOrder => sortingOrder;
     public bool IsVisible => isVisible;
     public bool IsInteractable => isInteractable;
     public DialogueLine[] Lines => lines;
