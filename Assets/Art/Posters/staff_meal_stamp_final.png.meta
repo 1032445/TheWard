@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 433a87e0ca6288c46a97750c06f3486b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -267737085469646713
+    second: staff_meal_stamp_final_0
+  - first:
+      213: 8199816034068952997
+    second: staff_meal_stamp_final_1
+  - first:
+      213: -2106618663361403812
+    second: staff_meal_stamp_final_2
+  - first:
+      213: -320316266222496118
+    second: staff_meal_stamp_final_3
+  - first:
+      213: 3561191769536754519
+    second: staff_meal_stamp_final_4
+  - first:
+      213: -1531345184997073667
+    second: staff_meal_stamp_final_5
+  - first:
+      213: -3671744076823821615
+    second: staff_meal_stamp_final_6
+  - first:
+      213: -9153629619990474912
+    second: staff_meal_stamp_final_7
+  - first:
+      213: -7381546368023122513
+    second: staff_meal_stamp_final_8
+  - first:
+      213: -1903912356622832512
+    second: staff_meal_stamp_final_9
+  - first:
+      213: -5315631607645779312
+    second: staff_meal_stamp_final_10
+  - first:
+      213: 4729073038166215802
+    second: staff_meal_stamp_final_11
+  - first:
+      213: 4598831699709205596
+    second: staff_meal_stamp_final_12
+  - first:
+      213: -8783763666514321048
+    second: staff_meal_stamp_final_13
+  - first:
+      213: -1896881268303017593
+    second: staff_meal_stamp_final_14
+  - first:
+      213: 6416496558745159118
+    second: staff_meal_stamp_final_15
+  - first:
+      213: 7322911468325407860
+    second: staff_meal_stamp_final_16
+  - first:
+      213: -5369404277960443057
+    second: staff_meal_stamp_final_17
+  - first:
+      213: 1123179412846208381
+    second: staff_meal_stamp_final_18
+  - first:
+      213: -3616061649021696244
+    second: staff_meal_stamp_final_19
+  - first:
+      213: 8893123039389720631
+    second: staff_meal_stamp_final_20
+  - first:
+      213: -2764026975101753385
+    second: staff_meal_stamp_final_21
+  - first:
+      213: -6007230157891910302
+    second: staff_meal_stamp_final_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 144
+        width: 786
+        height: 967
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780226f0a8ec84cf0800000000000000
+      internalID: -267737085469646713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 973
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a77b3e0d399bc170800000000000000
+      internalID: 8199816034068952997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 822
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54a22dac79c3c2e0800000000000000
+      internalID: -2106618663361403812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 323
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8657009d020e8bf0800000000000000
+      internalID: -320316266222496118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 688
+        width: 9
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7537840eb05eb6130800000000000000
+      internalID: 3561191769536754519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 508
+        width: 13
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc9ebbeaa19fbae0800000000000000
+      internalID: -1531345184997073667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_6
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 475
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d285c247385b0dc0800000000000000
+      internalID: -3671744076823821615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 144
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f49fecb56c7f080800000000000000
+      internalID: -9153629619990474912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_8
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 548
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad28e8ffaa7f8990800000000000000
+      internalID: -7381546368023122513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 490
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ce40c8cc1f395e0800000000000000
+      internalID: -1903912356622832512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_10
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 632
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a4f6d57351b36b0800000000000000
+      internalID: -5315631607645779312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_11
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 964
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c46cc5fda01a140800000000000000
+      internalID: 4729073038166215802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_12
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 156
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c19f2b01552df30800000000000000
+      internalID: 4598831699709205596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_13
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 345
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8616e62db7dc91680800000000000000
+      internalID: -8783763666514321048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_14
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 891
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789c4bd598ceca5e0800000000000000
+      internalID: -1896881268303017593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_15
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 156
+        width: 269
+        height: 955
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec58586cf99fb0950800000000000000
+      internalID: 6416496558745159118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_16
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 144
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c8b279e2530a560800000000000000
+      internalID: 7322911468325407860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_17
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1068
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b74bce14b0c75b0800000000000000
+      internalID: -5369404277960443057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_18
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 564
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75eab1a9b5569f00800000000000000
+      internalID: 1123179412846208381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_19
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 224
+        width: 30
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c070624c61b21ddc0800000000000000
+      internalID: -3616061649021696244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_20
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 667
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730aaaa5948ba6b70800000000000000
+      internalID: 8893123039389720631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_21
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 389
+        width: 34
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7667f4c1434a9d0800000000000000
+      internalID: -2764026975101753385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staff_meal_stamp_final_22
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 690
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265c6d2cff702aca0800000000000000
+      internalID: -6007230157891910302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      staff_meal_stamp_final_0: -267737085469646713
+      staff_meal_stamp_final_1: 8199816034068952997
+      staff_meal_stamp_final_10: -5315631607645779312
+      staff_meal_stamp_final_11: 4729073038166215802
+      staff_meal_stamp_final_12: 4598831699709205596
+      staff_meal_stamp_final_13: -8783763666514321048
+      staff_meal_stamp_final_14: -1896881268303017593
+      staff_meal_stamp_final_15: 6416496558745159118
+      staff_meal_stamp_final_16: 7322911468325407860
+      staff_meal_stamp_final_17: -5369404277960443057
+      staff_meal_stamp_final_18: 1123179412846208381
+      staff_meal_stamp_final_19: -3616061649021696244
+      staff_meal_stamp_final_2: -2106618663361403812
+      staff_meal_stamp_final_20: 8893123039389720631
+      staff_meal_stamp_final_21: -2764026975101753385
+      staff_meal_stamp_final_22: -6007230157891910302
+      staff_meal_stamp_final_3: -320316266222496118
+      staff_meal_stamp_final_4: 3561191769536754519
+      staff_meal_stamp_final_5: -1531345184997073667
+      staff_meal_stamp_final_6: -3671744076823821615
+      staff_meal_stamp_final_7: -9153629619990474912
+      staff_meal_stamp_final_8: -7381546368023122513
+      staff_meal_stamp_final_9: -1903912356622832512
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

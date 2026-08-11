@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ReadableObject : MonoBehaviour
 {
+    [Header("Generic Panel")]
+    [SerializeField] private GameObject panelToOpen;
+
     [Header("Text Readable")]
     [SerializeField] private GameObject textPanelToOpen;
     [TextArea(3, 10)]
@@ -29,6 +32,16 @@ public class ReadableObject : MonoBehaviour
     [SerializeField] private bool advanceStoryOnlyOnce = true;
 
     private bool hasAdvancedStory;
+    private static ReadableObject openPanel;
+
+    public static bool IsAnyGenericPanelOpen { get; private set; }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        openPanel = null;
+        IsAnyGenericPanelOpen = false;
+    }
 
     public bool CanInteract
     {
@@ -48,6 +61,13 @@ public class ReadableObject : MonoBehaviour
     {
         if (!CanInteract)
         {
+            return;
+        }
+
+        if (panelToOpen != null)
+        {
+            ToggleGenericPanel();
+            AdvanceStoryIfNeeded();
             return;
         }
 
@@ -96,6 +116,46 @@ public class ReadableObject : MonoBehaviour
         }
 
         AdvanceStoryIfNeeded();
+    }
+
+    public static void HideOpenPanel()
+    {
+        if (openPanel != null)
+        {
+            openPanel.HideGenericPanel();
+            return;
+        }
+
+        IsAnyGenericPanelOpen = false;
+    }
+
+    private void ToggleGenericPanel()
+    {
+        if (openPanel == this && panelToOpen.activeSelf)
+        {
+            HideGenericPanel();
+            return;
+        }
+
+        HideOpenPanel();
+        panelToOpen.SetActive(true);
+        openPanel = this;
+        IsAnyGenericPanelOpen = true;
+    }
+
+    private void HideGenericPanel()
+    {
+        if (panelToOpen != null)
+        {
+            panelToOpen.SetActive(false);
+        }
+
+        if (openPanel == this)
+        {
+            openPanel = null;
+        }
+
+        IsAnyGenericPanelOpen = openPanel != null;
     }
 
     private TextPanel GetTextPanel()

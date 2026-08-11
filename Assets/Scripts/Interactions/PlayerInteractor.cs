@@ -90,6 +90,12 @@ public class PlayerInteractor : MonoBehaviour
             return;
         }
 
+        if (ReadableObject.IsAnyGenericPanelOpen)
+        {
+            ReadableObject.HideOpenPanel();
+            return;
+        }
+
         if (currentNpc != null)
         {
             if (currentNpc.CanInteract)

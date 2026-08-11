@@ -6,6 +6,11 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 4f;
 
+    [Header("Footsteps")]
+    [SerializeField] private AudioSource footstepAudioSource;
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private float footstepInterval = 0.35f;
+
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 moveInput;
@@ -48,10 +53,12 @@ public class PlayerController : MonoBehaviour
             || LogbookPanel.IsAnyLogbookOpen
             || PatrolBoardPanel.IsAnyPatrolBoardOpen
             || ReadableImagePanel.IsAnyReadableImageOpen
+            || ReadableObject.IsAnyGenericPanelOpen
             || EndingChoicePanel.IsAnyEndingChoiceOpen
             || EndingSequence.IsEndingSequencePlaying)
         {
             moveInput = Vector2.zero;
+            footstepTimer = 0f;
             UpdateAnimator();
             return;
         }
@@ -63,6 +70,7 @@ public class PlayerController : MonoBehaviour
             moveInput.Normalize();
         }
 
+        UpdateFootsteps();
         UpdateAnimator();
     }
 
@@ -129,6 +137,27 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("MoveX", animationDirection.x);
         animator.SetFloat("MoveY", animationDirection.y);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
+    }
+
+    private float footstepTimer;
+
+    private void UpdateFootsteps()
+    {
+        if (footstepAudioSource == null
+            || footstepClip == null
+            || moveInput.sqrMagnitude <= 0.01f)
+        {
+            footstepTimer = 0f;
+            return;
+        }
+
+        footstepTimer -= Time.deltaTime;
+
+        if (footstepTimer <= 0f)
+        {
+            footstepAudioSource.PlayOneShot(footstepClip);
+            footstepTimer = Mathf.Max(0.05f, footstepInterval);
+        }
     }
 
     private void SetDefaultFacingDirection()

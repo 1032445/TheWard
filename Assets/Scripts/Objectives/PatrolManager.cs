@@ -8,6 +8,9 @@ public class PatrolManager : MonoBehaviour
     [SerializeField] private int currentTaskNumber = 1;
     [SerializeField] private int storyBeatAfterTask = -1;
     [SerializeField] private int taskNumberThatChangesStory = -1;
+    [Header("Task Completion Audio")]
+    [SerializeField] private AudioSource taskCompletionAudioSource;
+    [SerializeField] private AudioClip taskCompletionClip;
 
     public int CurrentTaskNumber => currentTaskNumber;
     public int TaskCount => taskNames != null ? taskNames.Length : 0;
@@ -56,6 +59,11 @@ public class PatrolManager : MonoBehaviour
         }
 
         currentTaskNumber++;
+
+        if (taskCompletionAudioSource != null && taskCompletionClip != null)
+        {
+            taskCompletionAudioSource.PlayOneShot(taskCompletionClip);
+        }
 
         if (taskNumber == taskNumberThatChangesStory)
         {
